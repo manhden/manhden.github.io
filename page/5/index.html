@@ -17,7 +17,7 @@
   },
   "name":"Chia sẻ là niềm vui",
   "description":"Chia sẻ là niềm vui | Manhnv",
-  "url":"https:\/\/manhnv.com\/tags\/ctf\/",
+  "url":"https:\/\/manhnv.com\/",
   "keywords":"[, manhnv, development, cyber security, hacker, CTF, CTF writeup]"
 }
 
@@ -33,10 +33,10 @@
 
 <meta property="og:description" content="Chia sẻ là niềm vui | Manhnv">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ctf">
-<meta name="twitter:title" content="ctf">
-<meta property="og:url" content="https://manhnv.com/tags/ctf/">
-<meta property="twitter:url" content="https://manhnv.com/tags/ctf/">
+<meta property="og:title" content="Chia sẻ là niềm vui">
+<meta name="twitter:title" content="Chia sẻ là niềm vui">
+<meta property="og:url" content="https://manhnv.com/">
+<meta property="twitter:url" content="https://manhnv.com/">
 <meta property="og:site_name" content="Chia sẻ là niềm vui">
 <meta property="og:description" content="Chia sẻ là niềm vui | Manhnv">
 <meta name="twitter:description" content="Chia sẻ là niềm vui | Manhnv">
@@ -59,16 +59,16 @@
 
 
 
-    <title>ctf</title>
+    <title>Chia sẻ là niềm vui</title>
 
     <link rel="icon" href="https://manhnv.com/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://manhnv.com/tags/ctf/index.xml">
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://manhnv.com/index.xml">
     
 
     
 
-    <link rel="canonical" href="https://manhnv.com/tags/ctf/">
+    <link rel="canonical" href="https://manhnv.com/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -253,18 +253,15 @@ if (!doNotTrack) {
 </nav>
 
       
-        
 
-      
       <div id="main" data-behavior="2"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
+        <section class="postShorten-group main-content-wrap">
+          
+          
             
-            
-              
   
     
   
@@ -278,141 +275,59 @@ if (!doNotTrack) {
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
-        <a class="link-unstyled" href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/" aria-label="Mở bài: [Cyber Apocalypse 2021]- Web MiniSTRyplace writeup">
+        <a class="link-unstyled" href="https://manhnv.com/post/tuy-bien-messages-khi-mo-terminal-ubuntu-sao-cho-dep-va-doc/" aria-label="Mở bài: Tùy biến messages khi bạn mở terminal trên ubuntu sao cho đẹp và độc">
       
-          [Cyber Apocalypse 2021]- Web MiniSTRyplace writeup
+          Tùy biến messages khi bạn mở terminal trên ubuntu sao cho đẹp và độc
         </a>
       </h1>
       
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2021-04-25T00:00:00Z">
+      <time datetime="2019-02-25T00:00:00Z">
         
-  tháng 4 25, 2021
+  tháng 2 25, 2019
 
       </time>
     
     
-  
-  
-    <span>mục</span>
-    
-      <a class="category-link" href="https://manhnv.com/categories/ctf">ctf</a>
-    
-  
-
     |
-    <a href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/#post-comments">
+    <a href="https://manhnv.com/post/tuy-bien-messages-khi-mo-terminal-ubuntu-sao-cho-dep-va-doc/#post-comments">
 	    <i class="fa fa-comments-o" aria-hidden="true"></i>
-	    <span class="disqus-comment-count" data-disqus-url="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/">First article</span>
+	    <span class="disqus-comment-count" data-disqus-url="https://manhnv.com/post/tuy-bien-messages-khi-mo-terminal-ubuntu-sao-cho-dep-va-doc/">First article</span>
 	</a>
   </div>
 
     </div>
     <div class="postShorten-excerpt">
       
-        1. Đề bài Đề bài cho một trang web như vầy
-Web MiniSTRyplace
-Và source code như vầy
-Source code MiniSTRyplace
-2. Giải quyết Nhìn vào hình source code bên trên, điều đầu tiên đập vào mắt là dòng code số 17.
-include(&#39;pages/&#39; . (isset($_GET[&#39;lang&#39;]) ? str_replace(&#39;../&#39;, &#39;&#39;, $_GET[&#39;lang&#39;]) : $lang[array_rand($lang)])); Đúng vậy, đoán ngay ra luôn là dạng LFI rồi.
-Có 1 điểm cần lưu ý ở đây, là giá trị của $_GET[‘lang’] sẽ bị replace chuỗi ‘.
+        Như các bạn đã biết ( nếu chưa biết thì mình nói cho mà biết ) đối với những ai sử dụng các hệ điều hành linux thì không thể thiếu “chương trình giao diện cửa sổ dòng lệnh” (command line interface), trong ubuntu thì có một chương trình có tên là “terminal”.
+ Việc tại sao, vì sao hay why sử dụng “chương trình giao diện cửa sổ dòng lệnh” là điều không thể thiếu đối với hệ điều hành linux, thì mình xin được nhường lại cho các bạn tự tìm hiểu nhé.
       
       <p>
         
-          <a href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/" class="postShorten-excerpt_link link" aria-label="Mở bài: [Cyber Apocalypse 2021]- Web MiniSTRyplace writeup">Đọc tiếp...</a>
+          <a href="https://manhnv.com/post/tuy-bien-messages-khi-mo-terminal-ubuntu-sao-cho-dep-va-doc/" class="postShorten-excerpt_link link" aria-label="Mở bài: Tùy biến messages khi bạn mở terminal trên ubuntu sao cho đẹp và độc">Đọc tiếp...</a>
         
         
       </p>
     </div>
   </div>
   
-    <a href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/" aria-label="Mở bài: [Cyber Apocalypse 2021]- Web MiniSTRyplace writeup">
+    <a href="https://manhnv.com/post/tuy-bien-messages-khi-mo-terminal-ubuntu-sao-cho-dep-va-doc/" aria-label="Mở bài: Tùy biến messages khi bạn mở terminal trên ubuntu sao cho đẹp và độc">
       <div class="postShorten-thumbnailimg">
-        <img alt="" src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/MiniSTRyplace/MiniSTRyplace.png"/>
+        <img alt="" src="https://images.viblo.asia/a57df286-516d-4254-8ac7-58cd97cc2386.png"/>
       </div>
     </a>
   
 </article>
 
-            
-              
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/" aria-label="Mở bài: [Cyber Apocalypse 2021]- Web Starfleet writeup">
-      
-          [Cyber Apocalypse 2021]- Web Starfleet writeup
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2021-04-25T00:00:00Z">
-        
-  tháng 4 25, 2021
-
-      </time>
-    
-    
-  
-  
-    <span>mục</span>
-    
-      <a class="category-link" href="https://manhnv.com/categories/ctf">ctf</a>
-    
-  
-
-    |
-    <a href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/#post-comments">
-	    <i class="fa fa-comments-o" aria-hidden="true"></i>
-	    <span class="disqus-comment-count" data-disqus-url="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/">First article</span>
-	</a>
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        1. Đề bài Bài này cho một web như vầy.
-Cho luôn source code như vầy Vậy bài này lại là một bài review source code.
-2. Giải quyết Các bạn để ý thì ảnh trên, bài thi cho địa chỉ web, khi truy cập vào thì có chức năng enroll với input cần điền vào là một email. Đọc vào source code thì có luôn chức năng send mail.
-      
-      <p>
-        
-          <a href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/" class="postShorten-excerpt_link link" aria-label="Mở bài: [Cyber Apocalypse 2021]- Web Starfleet writeup">Đọc tiếp...</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/" aria-label="Mở bài: [Cyber Apocalypse 2021]- Web Starfleet writeup">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Starfleet/Screen_Shot_2021-04-24_at_23.09.16.png"/>
-      </div>
-    </a>
-  
-</article>
-
-            
-            
+          
+          
   <div class="pagination-bar">
     <ul class="pagination">
       
         
           <li class="pagination-prev">
-            <a class="btn btn--default btn--small" href="https://manhnv.com/tags/ctf/" aria-label="Trang trước">
+            <a class="btn btn--default btn--small" href="https://manhnv.com/page/4/" aria-label="Trang trước">
               <i class="fa fa-angle-left text-base icon-mr"></i>
               <span>Trang trước</span>
             </a>
@@ -420,13 +335,12 @@ Cho luôn source code như vầy Vậy bài này lại là một bài review sou
         
         
       
-      <li class="pagination-number">trang thứ 2 trong 2 trang.</li>
+      <li class="pagination-number">trang thứ 5 trong 5 trang.</li>
     </ul>
   </div>
 
 
-          </section>
-        
+        </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2022 <a href="https://manhnv.com">Manhnv</a><a href="//www.dmca.com/Protection/Status.aspx?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>. All Rights Reserved

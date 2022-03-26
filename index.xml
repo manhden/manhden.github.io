@@ -6,7 +6,19 @@
     <description>Recent content on Chia sẻ là niềm vui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
-    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://manhnv.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://manhnv.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Write up - THỬ THÁCH NGÀY 1: PHP TYPE JUGGLING “_SMARTCALC.EXE_”</title>
+      <link>https://manhnv.com/post/ctf/cyberjutsu/writeup-thu-thach-ngay-1-php-type-juggling-smartcalc.exe/</link>
+      <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyberjutsu/writeup-thu-thach-ngay-1-php-type-juggling-smartcalc.exe/</guid>
+      <description>Hôm này cuối tuần, đang lướt facebook thì thấy một challenge của anh Mạnh Luật đăng về PHP Type Juggling nên vào chiến thử xem thế nào.
+I. Đề bài Các bạn được cung cấp một URL: http://css.kid.cyberjutsu-lab.tech:9000/type_juggling_inarray.php?p1=191&amp;amp;p2=7&amp;amp;op=%2a
+Đây là trang web viết bằng PHP (tất nhiên rồi), source code sẽ là: http://css.kid.cyberjutsu-lab.tech:9000/type_juggling_inarray.php?debug
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&amp;gt;  &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34;&amp;gt;  &amp;lt;title&amp;gt;MyApp Home&amp;lt;/title&amp;gt;  &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;style.</description>
+    </item>
+    
     <item>
       <title>Làm thế nào để ngăn không cho Dev commit secrets lên git? Ngăn chặn và phát hiện secrets trong Git</title>
       <link>https://manhnv.com/post/devsecops/lam-the-nao-de-ngan-khong-cho-dev-commit-secrets-len-git-ngan-chan-va-phat-hien-secrets-trong-git/</link>
