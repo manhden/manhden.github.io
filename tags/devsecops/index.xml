@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevSecOps on Chia sẻ là niềm vui</title>
+    <link>https://manhnv.com/tags/devsecops/</link>
+    <description>Recent content in DevSecOps on Chia sẻ là niềm vui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://manhnv.com/tags/devsecops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Làm thế nào để ngăn không cho Dev commit secrets lên git? Ngăn chặn và phát hiện secrets trong Git</title>
+      <link>https://manhnv.com/post/devsecops/lam-the-nao-de-ngan-khong-cho-dev-commit-secrets-len-git-ngan-chan-va-phat-hien-secrets-trong-git/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/devsecops/lam-the-nao-de-ngan-khong-cho-dev-commit-secrets-len-git-ngan-chan-va-phat-hien-secrets-trong-git/</guid>
+      <description>Ngày dài, Tháng nhớ, Năm mong để viết được một bài blog mới
+Chuyện là dạo gần đây, mình có tìm hiểu mấy thứ liên quan về DevSecOps và cũng có được tham gia một dự án có áp dụng DevSecOps thì mình cũng có nhìn thấy một số vấn đề, và bài viết này là một trong những vấn đề mình nhìn thấy.
+I. Giới thiệu Câu chuyện nó giống như thế này “****Thôi xong, tui push secret key lên github rồi “**, mọi người có thể đọc câu chuyện và nắm được tình huống.</description>
+    </item>
+    
+  </channel>
+</rss>

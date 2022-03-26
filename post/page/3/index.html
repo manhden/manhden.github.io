@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/manhnv.com\/",
+  "author": {
+    "@type": "Person",
+    "name": "Manh NV",
+    
+    "image": "https://manhnv.com/favicon.png"
+    
+  },
+  "name":"Chia sẻ là niềm vui",
+  "description":"Chia sẻ là niềm vui | Manhnv",
+  "url":"https:\/\/manhnv.com\/post\/",
+  "keywords":"[, manhnv, development, cyber security, hacker, CTF, CTF writeup]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.95.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Manh NV">
+<meta name="keywords" content=", manhnv, development, cyber security, hacker, CTF, CTF writeup">
+<meta name="description" content="Chia sẻ là niềm vui | Manhnv">
+
+
+<meta property="og:description" content="Chia sẻ là niềm vui | Manhnv">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Posts">
+<meta name="twitter:title" content="Posts">
+<meta property="og:url" content="https://manhnv.com/post/">
+<meta property="twitter:url" content="https://manhnv.com/post/">
+<meta property="og:site_name" content="Chia sẻ là niềm vui">
+<meta property="og:description" content="Chia sẻ là niềm vui | Manhnv">
+<meta name="twitter:description" content="Chia sẻ là niềm vui | Manhnv">
+<meta property="og:locale" content="vi">
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://manhnv.com/favicon.png">
+  <meta property="twitter:image" content="https://manhnv.com/favicon.png">
+
+
+
+
+
+
+    <title>Posts</title>
+
+    <link rel="icon" href="https://manhnv.com/favicon.png">
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://manhnv.com/post/index.xml">
+    
+
+    
+
+    <link rel="canonical" href="https://manhnv.com/post/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://manhnv.com/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://manhnv.com/css/mystyle.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-128983514-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="2">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://manhnv.com/" aria-label="Tới trang chủ">Chia sẻ là niềm vui</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://manhnv.com/#about" aria-label="Mở liên kết: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="2">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://manhnv.com/#about" aria-label="Tìm hiểu thêm về tác giả">
+          <img class="sidebar-profile-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+        </a>
+        <h4 class="sidebar-profile-name">Manh NV</h4>
+        
+          <h5 class="sidebar-profile-bio">Chia sẻ là niềm vui</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/donate.html" title="Donate">
+    
+      <i class="sidebar-button-icon fa fa-usd"></i>
+      
+      <span class="sidebar-button-desc">Donate</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Trang chủ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Danh mục</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Thẻ thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Lưu trữ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/copyrights" title="Copyrights">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-copyright"></i>
+      
+      <span class="sidebar-button-desc">Copyrights</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/nguyenmanh1997" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://facebook.com/manhnv.sec" target="_blank" rel="noopener" title="Facebook">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+      
+      <span class="sidebar-button-desc">Facebook</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.youtube.com/channel/UCEY3DBfSDupbSG96jfcSDwQ?sub_confirmation=1" target="_blank" rel="noopener" title="Youtube">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-youtube"></i>
+      
+      <span class="sidebar-button-desc">Youtube</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="2"
+        class="
+               hasCoverMetaIn
+               ">
+        <section class="postShorten-group main-content-wrap">
+          
+          
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" aria-label="Mở bài: Săn tìm tài khoản mạng xã hội bằng công cụ sherlock">
+      
+          Săn tìm tài khoản mạng xã hội bằng công cụ sherlock
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-08-02T00:00:00Z">
+        
+  tháng 8 2, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/security">security</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.
+Hôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm.
+      
+      <p>
+        
+          <a href="https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" class="postShorten-excerpt_link link" aria-label="Mở bài: Săn tìm tài khoản mạng xã hội bằng công cụ sherlock">Đọc tiếp...</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" aria-label="Mở bài: Săn tìm tài khoản mạng xã hội bằng công cụ sherlock">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/sherlock.png"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://manhnv.com/post/php/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/" aria-label="Mở bài: Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết">
+      
+          Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-07-23T00:00:00Z">
+        
+  tháng 7 23, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/php">php</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        PHP là ngôn ngữ được sử dụng rất nhiều trong lập trình web. Dưới đây là những ví dụ thực tế tốt nhất mà mọi lập trình viên đều nên biết và làm theo.
+Từng là một lập trình viên PHP, cũng làm những dự án lớn nhỏ của cá nhân, của công ty các thứ. Thì sau một thời gian dựa vào kinh nghiệm bản thân cũng như tìm hiểu qua bác google, mình cũng đúc rút ra được một số thứ hay ho muốn chia sẻ cho mọi người cùng đọc.
+      
+      <p>
+        
+          <a href="https://manhnv.com/post/php/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/" class="postShorten-excerpt_link link" aria-label="Mở bài: Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết">Đọc tiếp...</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://manhnv.com/post/php/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/" aria-label="Mở bài: Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://manhnv.com/images/posts/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/PHPSS.png"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://manhnv.com/post/cve-2019-7164-sqlalchemy-dinh-loi-sqlinjection-thong-qua-tham-so-cua-orderby/" aria-label="Mở bài: CVE-2019-7164: Lỗ hổng trong SQLALchemy (version 1.2.17 và 1.3.x đến 1.3.0b2) cho phép SQL injection thông qua tham số order_by.">
+      
+          CVE-2019-7164: Lỗ hổng trong SQLALchemy (version 1.2.17 và 1.3.x đến 1.3.0b2) cho phép SQL injection thông qua tham số order_by.
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-07-10T00:00:00Z">
+        
+  tháng 7 10, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/cve">CVE</a>, 
+    
+      <a class="category-link" href="https://manhnv.com/categories/sql-injection">SQL injection</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        CVE-2019-7164: Lỗ hổng trong SQLALchemy (version 1.2.17 và 1.3.x đến 1.3.0b2) cho phép SQL injection thông qua tham số order_by.
+Lời mở đầu Câu chuyện nó không có gì thú vị lắm nếu như tối không ngồi rảnh tay bấm vào xem source code của từng project cũ tôi từng viết trên github.
+Một ngày trời mưa ( theo tôi thì Hà Nội nắng nóng lâu rồi nên hôm nào mưa chính là ngày đẹp trời ), tôi vào xem lại từng project đã từng viết trong github của mình và nhận được một alert từ github: We found potential security vulnerabilities in your dependencies.
+      
+      <p>
+        
+          <a href="https://manhnv.com/post/cve-2019-7164-sqlalchemy-dinh-loi-sqlinjection-thong-qua-tham-so-cua-orderby/" class="postShorten-excerpt_link link" aria-label="Mở bài: CVE-2019-7164: Lỗ hổng trong SQLALchemy (version 1.2.17 và 1.3.x đến 1.3.0b2) cho phép SQL injection thông qua tham số order_by.">Đọc tiếp...</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://manhnv.com/post/cve-2019-7164-sqlalchemy-dinh-loi-sqlinjection-thong-qua-tham-so-cua-orderby/" aria-label="Mở bài: CVE-2019-7164: Lỗ hổng trong SQLALchemy (version 1.2.17 và 1.3.x đến 1.3.0b2) cho phép SQL injection thông qua tham số order_by.">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://manhnv.com/images/posts/cve-2019-7164-sqlalchemy-dinh-loi-sqlinjection-thong-qua-tham-so-cua-orderby/sqlalchemy.jpg"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://manhnv.com/post/lo-hong-heartbleed-la-gi-heartbleed-hoat-dong-nhu-the-nao/" aria-label="Mở bài: Lỗ hổng Heartbleed là gì? Heartbleed hoạt động như thế nào?">
+      
+          Lỗ hổng Heartbleed là gì? Heartbleed hoạt động như thế nào?
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-07-08T00:00:00Z">
+        
+  tháng 7 8, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/pentest-web">pentest web</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        &quot;Heartbleed - Trái tim rỉ máu&quot; là một lỗ hổng bảo mật rất nghiêm trọng, có mức độ ảnh hưởng đến 2/3 thiết bị internet trên toàn cầu. Vậy thì 'Heartbleed' là gì? cũng như cách hoạt động của nó như thế nào? Các bạn hãy đọc tiếp bài viết này của mình để biết chi tiết hơn.
+Lỗ hổng Heartbleed là gì? Heartbleed là một lỗ hổng được tìm phát hiện vào tháng 4 năm 2014.
+      
+      <p>
+        
+          <a href="https://manhnv.com/post/lo-hong-heartbleed-la-gi-heartbleed-hoat-dong-nhu-the-nao/" class="postShorten-excerpt_link link" aria-label="Mở bài: Lỗ hổng Heartbleed là gì? Heartbleed hoạt động như thế nào?">Đọc tiếp...</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://manhnv.com/post/lo-hong-heartbleed-la-gi-heartbleed-hoat-dong-nhu-the-nao/" aria-label="Mở bài: Lỗ hổng Heartbleed là gì? Heartbleed hoạt động như thế nào?">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://manhnv.com/images/posts/lo-hong-heartbleed-la-gi-heartbleed-hoat-dong-nhu-the-nao/heartbleed.jpg"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://manhnv.com/post/csrf-cross-site-request-forgery-la-gi-lam-the-nao-de-ngan-chan-tan-cong-csrf/" aria-label="Mở bài: CSRF (cross site request forgery) là gì? Làm thế nào để ngăn chặn tấn công CSRF?">
+      
+          CSRF (cross site request forgery) là gì? Làm thế nào để ngăn chặn tấn công CSRF?
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-06-25T00:00:00Z">
+        
+  tháng 6 25, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/pentest-web">pentest web</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Cross Site Request Forgery viết tắt là CSRF.
+CSRF là một trong những hình thức tấn công phổ biến nhất của những kẻ gửi thư rác và những kẻ lừa đảo trực tuyến. Cách khai thác tấn công CSRF khá là phức tạp nhưng nó lại rất phổ biến.
+Nhưng các cuộc tấn công CSRF có thể rất dễ dự đoán và vì vậy mức ảnh hưởng của nó ở mức vừa phải.
+      
+      <p>
+        
+          <a href="https://manhnv.com/post/csrf-cross-site-request-forgery-la-gi-lam-the-nao-de-ngan-chan-tan-cong-csrf/" class="postShorten-excerpt_link link" aria-label="Mở bài: CSRF (cross site request forgery) là gì? Làm thế nào để ngăn chặn tấn công CSRF?">Đọc tiếp...</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://manhnv.com/post/csrf-cross-site-request-forgery-la-gi-lam-the-nao-de-ngan-chan-tan-cong-csrf/" aria-label="Mở bài: CSRF (cross site request forgery) là gì? Làm thế nào để ngăn chặn tấn công CSRF?">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://manhnv.com/images/posts/csrf-cross-site-request-forgery-la-gi-lam-the-nao-de-ngan-chan-tan-cong-csrf/csrf.jpg"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://manhnv.com/post/webshell-la-gi-lam-the-nao-de-upload-su-dung-mot-webshell/" aria-label="Mở bài: Webshell là gì? Làm thể nào để upload/sử dụng một webshell?">
+      
+          Webshell là gì? Làm thể nào để upload/sử dụng một webshell?
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-06-18T00:00:00Z">
+        
+  tháng 6 18, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/pentest-web">Pentest web</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        WebShell là 1 dạng mã độc, cửa hậu có nhiều chức năng để hỗ trợ các hacker chiếm quyền quản lý các hệ thống website.WebShell thường được viết bằng nhiều loại ngôn ngữ và thường thì chính là ngôn ngữ mà website đó đang sử dụng. Chức năng cơ bản là tải tệp tin lên máy chủ, kết nối đến cơ sở dữ liệu, vượt qua các cơ chế bảo mật, cấu hình, tấn công bruteforce, Get Root, Local Attack… chỉ cần hacker có thể tải được các tệp tin webshell này lên hệ thống của website thì xem như hacker đã có toàn quyền kiểm soát website đó, cho dù không biết tài khoản và mật khẩu của máy chủ này là gì.
+      
+      <p>
+        
+          <a href="https://manhnv.com/post/webshell-la-gi-lam-the-nao-de-upload-su-dung-mot-webshell/" class="postShorten-excerpt_link link" aria-label="Mở bài: Webshell là gì? Làm thể nào để upload/sử dụng một webshell?">Đọc tiếp...</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://manhnv.com/post/webshell-la-gi-lam-the-nao-de-upload-su-dung-mot-webshell/" aria-label="Mở bài: Webshell là gì? Làm thể nào để upload/sử dụng một webshell?">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://manhnv.com/images/posts/webshell-la-gi-lam-the-nao-de-upload-su-dung-mot-webshell/what-is-webshell.jpg"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+            
+  
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-left">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="https://manhnv.com/post/toi-da-chiem-quyen-admin-cua-mot-trang-web-nhu-the-nao-loi-canh-bao-cho-nhung-trang-web-dang-de-api-mo/" aria-label="Mở bài: Tôi đã chiếm quyền admin của một trang web như thế nào? Lời cảnh báo cho những trang web đang để api mở!">
+      
+          Tôi đã chiếm quyền admin của một trang web như thế nào? Lời cảnh báo cho những trang web đang để api mở!
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-06-10T00:00:00Z">
+        
+  tháng 6 10, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/pentest-web">Pentest web</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Lời giới thiệu đầy ngọt ngào Một ngày đẹp trời, team của chúng tôi (Sun*$hell) được thách thức pentest cho một trang web chuẩn bị release, chính xác là còn 2 tiếng đồng hồ nữa là release. Chúng tôi đã không ngần ngại nhận lời thách thức này :D
+Sau một thời gian cật lực tìm kiếm lỗ hổng nào là XSS, Sql injection,&hellip; (một danh sách lỗi hay gặp ở trên web) thì cũng thấy đội devs kiểm tra khá là tốt giá trị từ người dùng, và hầu như không gặp một lỗi cơ bản nào.
+      
+      <p>
+        
+          <a href="https://manhnv.com/post/toi-da-chiem-quyen-admin-cua-mot-trang-web-nhu-the-nao-loi-canh-bao-cho-nhung-trang-web-dang-de-api-mo/" class="postShorten-excerpt_link link" aria-label="Mở bài: Tôi đã chiếm quyền admin của một trang web như thế nào? Lời cảnh báo cho những trang web đang để api mở!">Đọc tiếp...</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+    <a href="https://manhnv.com/post/toi-da-chiem-quyen-admin-cua-mot-trang-web-nhu-the-nao-loi-canh-bao-cho-nhung-trang-web-dang-de-api-mo/" aria-label="Mở bài: Tôi đã chiếm quyền admin của một trang web như thế nào? Lời cảnh báo cho những trang web đang để api mở!">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" src="https://manhnv.com/images/posts/chiem-quyen-admin/loi-mat-quyen-admin-1.png"/>
+      </div>
+    </a>
+  
+</article>
+
+          
+          
+  <div class="pagination-bar">
+    <ul class="pagination">
+      
+        
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="https://manhnv.com/post/page/2/" aria-label="Trang trước">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>Trang trước</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="https://manhnv.com/post/page/4/" aria-label="Trang sau">
+              <span>Trang sau</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+      
+      <li class="pagination-number">trang thứ 3 trong 4 trang.</li>
+    </ul>
+  </div>
+
+
+        </section>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 <a href="https://manhnv.com">Manhnv</a><a href="//www.dmca.com/Protection/Status.aspx?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+    
+    <h4 id="about-card-name">Manh NV</h4>
+    
+      <div id="about-card-bio">Chia sẻ là niềm vui</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Viết blog dạo
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        VietNam
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://manhnv.com/images/cover-v1.2.0.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://manhnv.com/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script src="https://manhnv.com/js/scripts.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

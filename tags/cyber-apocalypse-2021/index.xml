@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cyber Apocalypse 2021 on Chia sẻ là niềm vui</title>
+    <link>https://manhnv.com/tags/cyber-apocalypse-2021/</link>
+    <description>Recent content in Cyber Apocalypse 2021 on Chia sẻ là niềm vui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 05 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://manhnv.com/tags/cyber-apocalypse-2021/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web &#39;Bug report&#39; writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-bug-report-writeup/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-bug-report-writeup/</guid>
+      <description>1. Đề bài Vẫn là loạt bài writeup các challenge của cuộc thi Cyber Apocalypse 2021, lần này vẫn là một bài review source code nhưng dễ hơn. Và vẫn là câu nói cũ Mình rất hứng thú với mấy bài review source code, vì đó là sở trường của mình.
+Source code cho như dưới đây.
+2. Bắt đầu chiến nào Như mình đã nói ở trên lần này vẫn là một bài review source code nhưng dễ hơn.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web &#39;Alien complaint form&#39; writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-alien-complaint-form-writeup/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-alien-complaint-form-writeup/</guid>
+      <description>1. Đề bài Đề bài web này 1 lần nữa lại là một bài review source code. Mình rất hứng thú với mấy bài review source code, vì có vẻ nó là sở trường của mình.
+Source code cho như dưới đây.
+2. Nào! Chúng ta cùng đục nó Khi dạo qua một vòng code thì mình thấy một file bot.js.
+Giải thích Ứng dụng sẽ dùng thư viện puppeteer để tạo một browser và thực hiện mở các đường dẫn như http://127.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Misc &#39;Build yourself in&#39; writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-build-yourself-in-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-build-yourself-in-writeup/</guid>
+      <description>Đề bài Cũng như mấy bài misc khác, bài này cũng chỉ cho 1 ip và port để có thể connect vào.
+Khi tôi connect vào và điền một vài thứ ngớ ngẩn vào để thăm dò cách hoạt động của server, thì tôi nhận được một thông báo lỗi như sau:
+Đúng vậy, đó là một chương trình chạy bằng python gồm một số thống tin như sau:
+ File python: /app/build_yourself_in.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Misc Alien Camp and Input as a Service writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-alien-camp-and-input-as-a-service-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-alien-camp-and-input-as-a-service-writeup/</guid>
+      <description>1. Alien Camp Bài này đơn giản là cho một server với 1 port mở như vầy.
+Đây là yêu cầu của đề bài
+Khi connect vào server thì có các thông tin sau. Đơn giản và dễ hiểu thì là tính toán và gửi kết quả cho nó. Nó có tận 500 bài toán lận.
+Bài này thiên về kiểu viết code để tính toán, logic tý là ra nên khỏi phải giải thích nhiều.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web Daas writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/</guid>
+      <description>1. Đề bài Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.
+Web black box
+2. Giải quyết Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web emoji voting writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-emoji-voting-writeup.md/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-emoji-voting-writeup.md/</guid>
+      <description>1. Đề bài Cho web có tên là “emoji voting”
+Source code emoji voting
+2. Giải quyết Dạo quanh source code một vòng và tôi phát hiện ra một số thứ như vầy.
+Api với endpoint “/api/list” có nhận giá trị “order“ từ body của request (giá trị này người dùng kiểm soát được) và gửi tới function “getEmojis()” để truy vấn database
+Đi vào function “getEmojis()”, thì thấy câu truy vấn database được nối chuỗi, và không có filters hay encode gì cả.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web MiniSTRyplace writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/</guid>
+      <description>1. Đề bài Đề bài cho một trang web như vầy
+Web MiniSTRyplace
+Và source code như vầy
+Source code MiniSTRyplace
+2. Giải quyết Nhìn vào hình source code bên trên, điều đầu tiên đập vào mắt là dòng code số 17.
+include(&amp;#39;pages/&amp;#39; . (isset($_GET[&amp;#39;lang&amp;#39;]) ? str_replace(&amp;#39;../&amp;#39;, &amp;#39;&amp;#39;, $_GET[&amp;#39;lang&amp;#39;]) : $lang[array_rand($lang)])); Đúng vậy, đoán ngay ra luôn là dạng LFI rồi.
+Có 1 điểm cần lưu ý ở đây, là giá trị của $_GET[‘lang’] sẽ bị replace chuỗi ‘.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web Starfleet writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/</guid>
+      <description>1. Đề bài Bài này cho một web như vầy.
+Cho luôn source code như vầy Vậy bài này lại là một bài review source code.
+2. Giải quyết Các bạn để ý thì ảnh trên, bài thi cho địa chỉ web, khi truy cập vào thì có chức năng enroll với input cần điền vào là một email. Đọc vào source code thì có luôn chức năng send mail.</description>
+    </item>
+    
+  </channel>
+</rss>

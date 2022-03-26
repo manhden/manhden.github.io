@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/manhnv.com\/",
+  "author": {
+    "@type": "Person",
+    "name": "Manh NV",
+    
+    "image": "https://manhnv.com/favicon.png"
+    
+  },
+  "name":"Chia sẻ là niềm vui",
+  "description":"Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.\nHôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm.",
+  "url":"https:\/\/manhnv.com\/post\/hacking\/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool\/",
+  "keywords":"[, manhnv, development, cyber security, hacker, CTF, CTF writeup]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.95.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Manh NV">
+<meta name="keywords" content=", manhnv, development, cyber security, hacker, CTF, CTF writeup">
+<meta name="description" content="Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.
+Hôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm.">
+
+
+<meta property="og:description" content="Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.
+Hôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Săn tìm tài khoản mạng xã hội bằng công cụ sherlock">
+<meta name="twitter:title" content="Săn tìm tài khoản mạng xã hội bằng công cụ sherlock">
+<meta property="og:url" content="https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/">
+<meta property="twitter:url" content="https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/">
+<meta property="og:site_name" content="Chia sẻ là niềm vui">
+<meta property="og:description" content="Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.
+Hôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm.">
+<meta name="twitter:description" content="Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.
+Hôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm.">
+<meta property="og:locale" content="vi">
+
+  
+    <meta property="article:published_time" content="2019-08-02T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2019-08-02T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="security">
+    
+  
+  
+    
+      <meta property="article:tag" content="security">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://manhnv.com/favicon.png">
+  <meta property="twitter:image" content="https://manhnv.com/favicon.png">
+
+
+
+
+
+  <meta property="og:image" content="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/sherlock.png">
+  <meta property="twitter:image" content="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/sherlock.png">
+
+
+    <title>Săn tìm tài khoản mạng xã hội bằng công cụ sherlock</title>
+
+    <link rel="icon" href="https://manhnv.com/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://manhnv.com/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://manhnv.com/css/mystyle.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-128983514-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://manhnv.com/" aria-label="Tới trang chủ">Chia sẻ là niềm vui</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://manhnv.com/#about" aria-label="Mở liên kết: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://manhnv.com/#about" aria-label="Tìm hiểu thêm về tác giả">
+          <img class="sidebar-profile-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+        </a>
+        <h4 class="sidebar-profile-name">Manh NV</h4>
+        
+          <h5 class="sidebar-profile-bio">Chia sẻ là niềm vui</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/donate.html" title="Donate">
+    
+      <i class="sidebar-button-icon fa fa-usd"></i>
+      
+      <span class="sidebar-button-desc">Donate</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Trang chủ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Danh mục</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Thẻ thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Lưu trữ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/copyrights" title="Copyrights">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-copyright"></i>
+      
+      <span class="sidebar-button-desc">Copyrights</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/nguyenmanh1997" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://facebook.com/manhnv.sec" target="_blank" rel="noopener" title="Facebook">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+      
+      <span class="sidebar-button-desc">Facebook</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.youtube.com/channel/UCEY3DBfSDupbSG96jfcSDwQ?sub_confirmation=1" target="_blank" rel="noopener" title="Youtube">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-youtube"></i>
+      
+      <span class="sidebar-button-desc">Youtube</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Săn tìm tài khoản mạng xã hội bằng công cụ sherlock
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-08-02T00:00:00Z">
+        
+  tháng 8 2, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/security">security</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p><code>Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.</code></p>
+<p>Hôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm. Chính vì lẽ đó, hôm nay mình lại chia sẻ cho các bạn một công cụ khá là hay, &lsquo;Săn tìm tài khoản mạng xã hội bằng công cụ sherlock&rsquo;.</p>
+<h2 id="vậy-sherlock-là-gì">Vậy, Sherlock là gì?</h2>
+<p>Sherlock là một công cụ mã nguồn mở viết bằng python có thể quét được tài khoản của người dùng được tạo bởi một người trên nhiều trang web (chủ yếu là các trang mạng xã hội, phương tiện truyền thông) với <code>screen_name</code> hoặc <code>username</code>.</p>
+<p>Bạn có thể đọc qua source code của Sherlock tại github của nó <code>https://github.com/sherlock-project/sherlock</code>.</p>
+<p><img src="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/source-sherlock.png" alt="source sherlock" title="source sherlock"></p>
+<h2 id="cài-đặt-sherlock">Cài đặt Sherlock</h2>
+<ul>
+<li>
+<p>Clone the repo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/sherlock-project/sherlock.git
+</span></span></code></pre></div><p><img src="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/clone-source-sherlock.png" alt="clone source sherlock" title="clone source sherlock"></p>
+</li>
+<li>
+<p>Di chuyển vào thư mục <code>sherlock</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd sherlock
+</span></span></code></pre></div></li>
+<li>
+<p>Cài đặt python3 và python3-pip (nếu chưa có)</p>
+</li>
+<li>
+<p>Cài đặt các thư viện có trong file <code>requirements.txt</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip3 install -r requirements.txt
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="trải-nghiệm-sherlock">Trải nghiệm Sherlock</h2>
+<h3 id="1-để-xem-help-của-sherlock">1. Để xem help của Sherlock</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ python sherlock.py -h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>usage: sherlock.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--version<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--verbose<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--rank<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">[</span>--folderoutput FOLDEROUTPUT<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--output OUTPUT<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--tor<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">[</span>--unique-tor<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--csv<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--site SITE_NAME<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">[</span>--proxy PROXY_URL<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--json JSON_FILE<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">[</span>--proxy_list PROXY_LIST<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--check_proxies CHECK_PROXY<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                   <span style="color:#f92672">[</span>--print-found<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>                   USERNAMES <span style="color:#f92672">[</span>USERNAMES ...<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Sherlock: Find Usernames Across Social Networks <span style="color:#f92672">(</span>Version 0.7.8<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>positional arguments:
+</span></span><span style="display:flex;"><span>  USERNAMES             One or more usernames to check with social networks.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>optional arguments:
+</span></span><span style="display:flex;"><span>  -h, --help            show this help message and exit
+</span></span><span style="display:flex;"><span>  --version             Display version information and dependencies.
+</span></span><span style="display:flex;"><span>  --verbose, -v, -d, --debug
+</span></span><span style="display:flex;"><span>                        Display extra debugging information and metrics.
+</span></span><span style="display:flex;"><span>  --rank, -r            Present websites ordered by their Alexa.com global
+</span></span><span style="display:flex;"><span>                        rank in popularity.
+</span></span><span style="display:flex;"><span>  --folderoutput FOLDEROUTPUT, -fo FOLDEROUTPUT
+</span></span><span style="display:flex;"><span>                        If using multiple usernames, the output of the results
+</span></span><span style="display:flex;"><span>                        will be saved at this folder.
+</span></span><span style="display:flex;"><span>  --output OUTPUT, -o OUTPUT
+</span></span><span style="display:flex;"><span>                        If using single username, the output of the result
+</span></span><span style="display:flex;"><span>                        will be saved at this file.
+</span></span><span style="display:flex;"><span>  --tor, -t             Make requests over Tor; increases runtime; requires
+</span></span><span style="display:flex;"><span>                        Tor to be installed and in system path.
+</span></span><span style="display:flex;"><span>  --unique-tor, -u      Make requests over Tor with new Tor circuit after each
+</span></span><span style="display:flex;"><span>                        request; increases runtime; requires Tor to be
+</span></span><span style="display:flex;"><span>                        installed and in system path.
+</span></span><span style="display:flex;"><span>  --csv                 Create Comma-Separated Values <span style="color:#f92672">(</span>CSV<span style="color:#f92672">)</span> File.
+</span></span><span style="display:flex;"><span>  --site SITE_NAME      Limit analysis to just the listed sites. Add multiple
+</span></span><span style="display:flex;"><span>                        options to specify more than one site.
+</span></span><span style="display:flex;"><span>  --proxy PROXY_URL, -p PROXY_URL
+</span></span><span style="display:flex;"><span>                        Make requests over a proxy. e.g.
+</span></span><span style="display:flex;"><span>                        socks5://127.0.0.1:1080
+</span></span><span style="display:flex;"><span>  --json JSON_FILE, -j JSON_FILE
+</span></span><span style="display:flex;"><span>                        Load data from a JSON file or an online, valid, JSON
+</span></span><span style="display:flex;"><span>                        file.
+</span></span><span style="display:flex;"><span>  --proxy_list PROXY_LIST, -pl PROXY_LIST
+</span></span><span style="display:flex;"><span>                        Make requests over a proxy randomly chosen from a list
+</span></span><span style="display:flex;"><span>                        generated from a .csv file.
+</span></span><span style="display:flex;"><span>  --check_proxies CHECK_PROXY, -cp CHECK_PROXY
+</span></span><span style="display:flex;"><span>                        To be used with the <span style="color:#e6db74">&#39;--proxy_list&#39;</span> parameter. The
+</span></span><span style="display:flex;"><span>                        script will check <span style="color:#66d9ef">if</span> the proxies supplied in the .csv
+</span></span><span style="display:flex;"><span>                        file are working and anonymous.Put <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> no limit on
+</span></span><span style="display:flex;"><span>                        successfully checked proxies, or another number to
+</span></span><span style="display:flex;"><span>                        institute a limit.
+</span></span><span style="display:flex;"><span>  --print-found         Do not output sites where the username was not found.
+</span></span></code></pre></div><h3 id="2-xác-định-tên-tài-khoản-cần-dò-quét">2. Xác định tên tài khoản cần dò quét</h3>
+<p>Chúng ta có thể lên các trang mạng xã hội như facebook, twitter, &hellip; tìm lấy một username bất kỳ nào đó muốn dò quét.</p>
+<p>Ở đây mình dùng luôn tài khoản của mình làm demo cho các bạn xem, với username là <code>nguyenmanh1997</code></p>
+<p><img src="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/nguyenmanh.png" alt="manhnv" title="manhnv"></p>
+<h3 id="3-quét-tài-khoản">3. Quét tài khoản</h3>
+<p>Bây giờ, mình đã chạy file <code>sherlock.py</code> bằng lệnh sau <code>python sherlock.py target_name -r --print-found</code> để tìm ra tất cả tài khoản trên các trang mạng truyền thông xã hội của mục tiêu tôi cần tìm hiểu.</p>
+<p><img src="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/result-sherlock.png" alt="manhnv" title="manhnv"></p>
+<p><strong>Lưu ý:</strong></p>
+<ul>
+<li>Tham số  <code>-r</code> trong lệnh trên sẽ sắp xếp danh sách các tài khoản được tìm thấy theo các trang web phổ biến nhất.</li>
+<li>Tham số <code>--print-found</code> sẽ chỉ hiển thị những trang tìm thấy tài khoản đó.</li>
+</ul>
+<p>Bạn cũng có thể quét nhiều tài khoản cùng một lúc</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python sherlock.py user1 user2 user3
+</span></span></code></pre></div><p><img src="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/user1-2-3.png" alt="manhnv" title="manhnv"></p>
+<p>Tất cả các tài khoản được tìm thấy sẽ lưu ra một tệp <code>.txt</code> cho từng tài khoản riêng.</p>
+<p><img src="https://manhnv.com/images/posts/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/file.png" alt="manhnv" title="manhnv"></p>
+<p>Bạn cũng có thể chạy bằng <code>docker</code> nếu bạn đã cài đặt docker.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build -t mysherlock-image .
+</span></span></code></pre></div><p>Khi docker image được chạy lên bạn có thể chạy lệnh:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --rm -t mysherlock-image user123
+</span></span></code></pre></div><h2 id="tổng-kết">Tổng kết</h2>
+<ul>
+<li>Bạn có thể thấy ví dụ trên mình đã tìm kiếm tài khoản trên internet bằng cách sử dụng <code>sherlock.py</code> một cách đơn giản.</li>
+<li>Qua bài viết này mình cũng muốn nhắn nhủ rằng các bạn hãy sử dụng internet một cách cẩn thận, đưa ít thông tin cá nhân lên mạng xã hội thôi. Vì một khi trở thành mục tiêu của hacker thì những trang mạng bạn sử dụng sẽ luôn là nói tìm kiếm thông tin hữu ích cho hacker.</li>
+</ul>
+<p>Cuối cùng thì cảm ơn các bạn đã đọc bài viết của mình.</p>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">THẺ ĐÁNH DẤU</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://manhnv.com/tags/security/">security</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/hacking/thuc-hien-trinh-sat-tham-do-email-voi-cong-cu-buster-huong-dan-tham-do-crush-nguoi-yeu-thoi-dai-4.0/" data-tooltip="Thực hiện trinh sát - thăm dò email với công cụ buster. Hướng dẫn thăm dò crush, người yêu thời đại 4.0." aria-label="Tiếp: Thực hiện trinh sát - thăm dò email với công cụ buster. Hướng dẫn thăm dò crush, người yêu thời đại 4.0.">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">Tiếp</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/php/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/" data-tooltip="Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết" aria-label="Trước: Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">Trước</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Chia sẻ bài viết này">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" title="Chia sẻ với Facebook" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" title="Chia sẻ với Twitter" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" title="Chia sẻ với Linkedin" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Để lại một bình luận">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Trở lại đầu trang">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/manhnv.com\/post\/hacking\/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool\/';
+        
+          this.page.identifier = '\/post\/hacking\/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'hugo-tranquilpeak-theme';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 <a href="https://manhnv.com">Manhnv</a><a href="//www.dmca.com/Protection/Status.aspx?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/hacking/thuc-hien-trinh-sat-tham-do-email-voi-cong-cu-buster-huong-dan-tham-do-crush-nguoi-yeu-thoi-dai-4.0/" data-tooltip="Thực hiện trinh sát - thăm dò email với công cụ buster. Hướng dẫn thăm dò crush, người yêu thời đại 4.0." aria-label="Tiếp: Thực hiện trinh sát - thăm dò email với công cụ buster. Hướng dẫn thăm dò crush, người yêu thời đại 4.0.">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">Tiếp</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/php/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/" data-tooltip="Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết" aria-label="Trước: Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">Trước</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Chia sẻ bài viết này">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" title="Chia sẻ với Facebook" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" title="Chia sẻ với Twitter" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/" title="Chia sẻ với Linkedin" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Để lại một bình luận">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Trở lại đầu trang">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmanhnv.com%2Fpost%2Fhacking%2Fsan-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool%2F" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Chia sẻ với Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fmanhnv.com%2Fpost%2Fhacking%2Fsan-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool%2F" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Chia sẻ với Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmanhnv.com%2Fpost%2Fhacking%2Fsan-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool%2F" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Chia sẻ với Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+    
+    <h4 id="about-card-name">Manh NV</h4>
+    
+      <div id="about-card-bio">Chia sẻ là niềm vui</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Viết blog dạo
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        VietNam
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://manhnv.com/images/cover-v1.2.0.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://manhnv.com/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script src="https://manhnv.com/js/scripts.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

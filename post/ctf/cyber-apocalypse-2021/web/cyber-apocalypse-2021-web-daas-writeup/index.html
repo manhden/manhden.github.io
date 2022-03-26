@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/manhnv.com\/",
+  "author": {
+    "@type": "Person",
+    "name": "Manh NV",
+    
+    "image": "https://manhnv.com/favicon.png"
+    
+  },
+  "name":"Chia sẻ là niềm vui",
+  "description":"1. Đề bài Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.\nWeb black box\n2. Giải quyết Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.",
+  "url":"https:\/\/manhnv.com\/post\/ctf\/cyber-apocalypse-2021\/web\/cyber-apocalypse-2021-web-daas-writeup\/",
+  "keywords":"[, manhnv, development, cyber security, hacker, CTF, CTF writeup]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.95.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Manh NV">
+<meta name="keywords" content=", manhnv, development, cyber security, hacker, CTF, CTF writeup">
+<meta name="description" content="1. Đề bài Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.
+Web black box
+2. Giải quyết Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.">
+
+
+<meta property="og:description" content="1. Đề bài Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.
+Web black box
+2. Giải quyết Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Cyber Apocalypse 2021]- Web Daas writeup">
+<meta name="twitter:title" content="[Cyber Apocalypse 2021]- Web Daas writeup">
+<meta property="og:url" content="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/">
+<meta property="twitter:url" content="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/">
+<meta property="og:site_name" content="Chia sẻ là niềm vui">
+<meta property="og:description" content="1. Đề bài Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.
+Web black box
+2. Giải quyết Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.">
+<meta name="twitter:description" content="1. Đề bài Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.
+Web black box
+2. Giải quyết Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.">
+<meta property="og:locale" content="vi">
+
+  
+    <meta property="article:published_time" content="2021-04-25T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-04-25T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="ctf">
+    
+  
+  
+    
+      <meta property="article:tag" content="ctf">
+    
+      <meta property="article:tag" content="Cyber Apocalypse 2021">
+    
+      <meta property="article:tag" content="ctf web writeup">
+    
+      <meta property="article:tag" content="writeup">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://manhnv.com/favicon.png">
+  <meta property="twitter:image" content="https://manhnv.com/favicon.png">
+
+
+
+
+
+  <meta property="og:image" content="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/daas.png">
+  <meta property="twitter:image" content="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/daas.png">
+
+
+    <title>[Cyber Apocalypse 2021]- Web Daas writeup</title>
+
+    <link rel="icon" href="https://manhnv.com/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://manhnv.com/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://manhnv.com/css/mystyle.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-128983514-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://manhnv.com/" aria-label="Tới trang chủ">Chia sẻ là niềm vui</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://manhnv.com/#about" aria-label="Mở liên kết: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://manhnv.com/#about" aria-label="Tìm hiểu thêm về tác giả">
+          <img class="sidebar-profile-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+        </a>
+        <h4 class="sidebar-profile-name">Manh NV</h4>
+        
+          <h5 class="sidebar-profile-bio">Chia sẻ là niềm vui</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/donate.html" title="Donate">
+    
+      <i class="sidebar-button-icon fa fa-usd"></i>
+      
+      <span class="sidebar-button-desc">Donate</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Trang chủ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Danh mục</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Thẻ thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Lưu trữ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://manhnv.com/copyrights" title="Copyrights">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-copyright"></i>
+      
+      <span class="sidebar-button-desc">Copyrights</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/nguyenmanh1997" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://facebook.com/manhnv.sec" target="_blank" rel="noopener" title="Facebook">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+      
+      <span class="sidebar-button-desc">Facebook</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.youtube.com/channel/UCEY3DBfSDupbSG96jfcSDwQ?sub_confirmation=1" target="_blank" rel="noopener" title="Youtube">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-youtube"></i>
+      
+      <span class="sidebar-button-desc">Youtube</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      [Cyber Apocalypse 2021]- Web Daas writeup
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-04-25T00:00:00Z">
+        
+  tháng 4 25, 2021
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="https://manhnv.com/categories/ctf">ctf</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <h3 id="1-đềbài">1. Đề bài</h3>
+<p>Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.</p>
+<p><img src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/daas.png" alt="/images/posts/ctf/Cyber-Apocalypse-2021/Daas/daas.png"></p>
+<p>Web black box</p>
+<h3 id="2-giảiquyết">2. Giải quyết</h3>
+<p>Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.</p>
+<p>Ngay tại góc dưới cùng bên phải có hiển thị version của laravel: Laravel v8.35.1 (PHP v7.4.16)</p>
+<p><img src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/version.png" alt="/images/posts/ctf/Cyber-Apocalypse-2021/Daas/version.png"></p>
+<p>Laravel v8.35.1 (PHP v7.4.16)</p>
+<p>Được rồi, có vẻ hay rồi đây, vì tôi chợt nhớ gần đây laravel có một lỗi có thể RCE được, nó có tên là:</p>
+<blockquote>
+<p>LARAVEL &lt;= V8.4.2 DEBUG MODE: REMOTE CODE EXECUTION</p>
+</blockquote>
+<p>Thì đó, trong tên có nói luôn kìa, là những version laravel 8.4.2 có khả năng gặp lỗi này. Cụ thể về lỗi này thì các bạn đọc ở đây nha: <a href="https://www.ambionics.io/blog/laravel-debug-rce">Laravel &lt;= v8.4.2 debug mode: Remote code execution (ambionics.io)</a></p>
+<p>Còn tôi giờ chỉ quan tâm chạy được để lấy flag thật nhanh thôi.</p>
+<blockquote>
+<p>Điểm cần lưu ý ở lỗi này của laravel là web chạy laravel đó phải đang bật debug. Vậy để chắc chắn là web được cho có bật debug hay không thì tôi thử thay vì vào web bằng phương thức GET, tôi chuyển nó thành POST (Tôi sử dụng burpsuite nha).</p>
+</blockquote>
+<p><img src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/debug-mode.png" alt="/images/posts/ctf/Cyber-Apocalypse-2021/Daas/debug-mode.png"></p>
+<p>Debug được bật</p>
+<p>Trước tiên là tìm exploit trên mạng và tải về nào.</p>
+<p><img src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/laravel-exploit.png" alt="/images/posts/ctf/Cyber-Apocalypse-2021/Daas/laravel-exploit.png"></p>
+<p>Tạo file .phar với lệnh <em>find / -name “flag</em>”* để tìm file flag trên server nhé.</p>
+<p><img src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/find-flag-file.png" alt="/images/posts/ctf/Cyber-Apocalypse-2021/Daas/find-flag-file.png"></p>
+<p>Tìm flag file</p>
+<p>Bây giờ thì tạo lại file .phar với lệnh <em>cat</em> để đọc file flag, sau đó là chạy exploit và lấy flag.</p>
+<p><img src="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2021/Daas/get-flag.png" alt="/images/posts/ctf/Cyber-Apocalypse-2021/Daas/get-flag.png"></p>
+<p>Exploit get flag</p>
+<blockquote>
+<p>Flag là: CHTB{wh3n_7h3_d3bu663r_7urn5_4641n57_7h3_d3bu6633}</p>
+</blockquote>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">THẺ ĐÁNH DẤU</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://manhnv.com/tags/ctf/">ctf</a>
+
+  <a class="tag tag--primary tag--small" href="https://manhnv.com/tags/cyber-apocalypse-2021/">Cyber Apocalypse 2021</a>
+
+  <a class="tag tag--primary tag--small" href="https://manhnv.com/tags/ctf-web-writeup/">ctf web writeup</a>
+
+  <a class="tag tag--primary tag--small" href="https://manhnv.com/tags/writeup/">writeup</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-alien-camp-and-input-as-a-service-writeup/" data-tooltip="[Cyber Apocalypse 2021]- Misc Alien Camp and Input as a Service writeup" aria-label="Tiếp: [Cyber Apocalypse 2021]- Misc Alien Camp and Input as a Service writeup">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">Tiếp</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-emoji-voting-writeup.md/" data-tooltip="[Cyber Apocalypse 2021]- Web emoji voting writeup" aria-label="Trước: [Cyber Apocalypse 2021]- Web emoji voting writeup">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">Trước</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Chia sẻ bài viết này">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/" title="Chia sẻ với Facebook" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/" title="Chia sẻ với Twitter" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/" title="Chia sẻ với Linkedin" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Để lại một bình luận">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Trở lại đầu trang">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/manhnv.com\/post\/ctf\/cyber-apocalypse-2021\/web\/cyber-apocalypse-2021-web-daas-writeup\/';
+        
+          this.page.identifier = '\/post\/ctf\/cyber-apocalypse-2021\/web\/cyber-apocalypse-2021-web-daas-writeup\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'hugo-tranquilpeak-theme';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 <a href="https://manhnv.com">Manhnv</a><a href="//www.dmca.com/Protection/Status.aspx?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-alien-camp-and-input-as-a-service-writeup/" data-tooltip="[Cyber Apocalypse 2021]- Misc Alien Camp and Input as a Service writeup" aria-label="Tiếp: [Cyber Apocalypse 2021]- Misc Alien Camp and Input as a Service writeup">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">Tiếp</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-emoji-voting-writeup.md/" data-tooltip="[Cyber Apocalypse 2021]- Web emoji voting writeup" aria-label="Trước: [Cyber Apocalypse 2021]- Web emoji voting writeup">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">Trước</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Chia sẻ bài viết này">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/" title="Chia sẻ với Facebook" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/" title="Chia sẻ với Twitter" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/" title="Chia sẻ với Linkedin" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Để lại một bình luận">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Trở lại đầu trang">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmanhnv.com%2Fpost%2Fctf%2Fcyber-apocalypse-2021%2Fweb%2Fcyber-apocalypse-2021-web-daas-writeup%2F" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Chia sẻ với Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fmanhnv.com%2Fpost%2Fctf%2Fcyber-apocalypse-2021%2Fweb%2Fcyber-apocalypse-2021-web-daas-writeup%2F" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Chia sẻ với Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmanhnv.com%2Fpost%2Fctf%2Fcyber-apocalypse-2021%2Fweb%2Fcyber-apocalypse-2021-web-daas-writeup%2F" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Chia sẻ với Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+    
+    <h4 id="about-card-name">Manh NV</h4>
+    
+      <div id="about-card-bio">Chia sẻ là niềm vui</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Viết blog dạo
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        VietNam
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://manhnv.com/images/cover-v1.2.0.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://manhnv.com/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script src="https://manhnv.com/js/scripts.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

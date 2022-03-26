@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Chia sẻ là niềm vui</title>
+    <link>https://manhnv.com/post/</link>
+    <description>Recent content in Posts on Chia sẻ là niềm vui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://manhnv.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Làm thế nào để ngăn không cho Dev commit secrets lên git? Ngăn chặn và phát hiện secrets trong Git</title>
+      <link>https://manhnv.com/post/devsecops/lam-the-nao-de-ngan-khong-cho-dev-commit-secrets-len-git-ngan-chan-va-phat-hien-secrets-trong-git/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/devsecops/lam-the-nao-de-ngan-khong-cho-dev-commit-secrets-len-git-ngan-chan-va-phat-hien-secrets-trong-git/</guid>
+      <description>Ngày dài, Tháng nhớ, Năm mong để viết được một bài blog mới
+Chuyện là dạo gần đây, mình có tìm hiểu mấy thứ liên quan về DevSecOps và cũng có được tham gia một dự án có áp dụng DevSecOps thì mình cũng có nhìn thấy một số vấn đề, và bài viết này là một trong những vấn đề mình nhìn thấy.
+I. Giới thiệu Câu chuyện nó giống như thế này “****Thôi xong, tui push secret key lên github rồi “**, mọi người có thể đọc câu chuyện và nắm được tình huống.</description>
+    </item>
+    
+    <item>
+      <title>Thử học làm hacker | Hack tài khoản ngân hàng chứa hơn 66996 USD</title>
+      <link>https://manhnv.com/post/hacking/thu-hoc-lam-hacker-hack-tai-khoan-ngan-hang-chua-hon-66996-usd/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/hacking/thu-hoc-lam-hacker-hack-tai-khoan-ngan-hang-chua-hon-66996-usd/</guid>
+      <description>Chào các bạn đã quay trở lại với chanel youtube của mình!
+Ý lộn, sửa
+Chào các bạn đã quay trở lại với blog của mình manhnv.com.
+Cũng đã lâu rồi, được hẳn 1 tuần rồi mình chưa ra bài viết nào vì mình hết ý tưởng viết bài rồi (sad x3000). Nửa đêm vỗ gối ruột đau như cắt, nước mắt đầm đìa, chỉ hận không có nhiều ý tưởng hơn để viết thật nhiều bài cho các bạn đọc cho vui, nhất là dịp covid này thì phải có bài mới cho mọi người đọc đỡ buồn đúng không nào.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web &#39;Bug report&#39; writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-bug-report-writeup/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-bug-report-writeup/</guid>
+      <description>1. Đề bài Vẫn là loạt bài writeup các challenge của cuộc thi Cyber Apocalypse 2021, lần này vẫn là một bài review source code nhưng dễ hơn. Và vẫn là câu nói cũ Mình rất hứng thú với mấy bài review source code, vì đó là sở trường của mình.
+Source code cho như dưới đây.
+2. Bắt đầu chiến nào Như mình đã nói ở trên lần này vẫn là một bài review source code nhưng dễ hơn.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web &#39;Alien complaint form&#39; writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-alien-complaint-form-writeup/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-alien-complaint-form-writeup/</guid>
+      <description>1. Đề bài Đề bài web này 1 lần nữa lại là một bài review source code. Mình rất hứng thú với mấy bài review source code, vì có vẻ nó là sở trường của mình.
+Source code cho như dưới đây.
+2. Nào! Chúng ta cùng đục nó Khi dạo qua một vòng code thì mình thấy một file bot.js.
+Giải thích Ứng dụng sẽ dùng thư viện puppeteer để tạo một browser và thực hiện mở các đường dẫn như http://127.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Misc &#39;Build yourself in&#39; writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-build-yourself-in-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-build-yourself-in-writeup/</guid>
+      <description>Đề bài Cũng như mấy bài misc khác, bài này cũng chỉ cho 1 ip và port để có thể connect vào.
+Khi tôi connect vào và điền một vài thứ ngớ ngẩn vào để thăm dò cách hoạt động của server, thì tôi nhận được một thông báo lỗi như sau:
+Đúng vậy, đó là một chương trình chạy bằng python gồm một số thống tin như sau:
+ File python: /app/build_yourself_in.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Misc Alien Camp and Input as a Service writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-alien-camp-and-input-as-a-service-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/misc/cyber-apocalypse-2021-misc-alien-camp-and-input-as-a-service-writeup/</guid>
+      <description>1. Alien Camp Bài này đơn giản là cho một server với 1 port mở như vầy.
+Đây là yêu cầu của đề bài
+Khi connect vào server thì có các thông tin sau. Đơn giản và dễ hiểu thì là tính toán và gửi kết quả cho nó. Nó có tận 500 bài toán lận.
+Bài này thiên về kiểu viết code để tính toán, logic tý là ra nên khỏi phải giải thích nhiều.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web Daas writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-daas-writeup/</guid>
+      <description>1. Đề bài Đề bài cho một web như vầy, không có một chức năng gì hết và đây là một bài blackbox không có source code.
+Web black box
+2. Giải quyết Vì web không có chức năng nào khác ngoài cái trang welcome mặc định của framework laravel nằm lù lù ra đó. Nên tôi quyết định săm soi một lúc thì chợt phát hiện ra vài thứ hay hay.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web emoji voting writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-emoji-voting-writeup.md/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-emoji-voting-writeup.md/</guid>
+      <description>1. Đề bài Cho web có tên là “emoji voting”
+Source code emoji voting
+2. Giải quyết Dạo quanh source code một vòng và tôi phát hiện ra một số thứ như vầy.
+Api với endpoint “/api/list” có nhận giá trị “order“ từ body của request (giá trị này người dùng kiểm soát được) và gửi tới function “getEmojis()” để truy vấn database
+Đi vào function “getEmojis()”, thì thấy câu truy vấn database được nối chuỗi, và không có filters hay encode gì cả.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web MiniSTRyplace writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-ministryplace-writeup/</guid>
+      <description>1. Đề bài Đề bài cho một trang web như vầy
+Web MiniSTRyplace
+Và source code như vầy
+Source code MiniSTRyplace
+2. Giải quyết Nhìn vào hình source code bên trên, điều đầu tiên đập vào mắt là dòng code số 17.
+include(&amp;#39;pages/&amp;#39; . (isset($_GET[&amp;#39;lang&amp;#39;]) ? str_replace(&amp;#39;../&amp;#39;, &amp;#39;&amp;#39;, $_GET[&amp;#39;lang&amp;#39;]) : $lang[array_rand($lang)])); Đúng vậy, đoán ngay ra luôn là dạng LFI rồi.
+Có 1 điểm cần lưu ý ở đây, là giá trị của $_GET[‘lang’] sẽ bị replace chuỗi ‘.</description>
+    </item>
+    
+    <item>
+      <title>[Cyber Apocalypse 2021]- Web Starfleet writeup</title>
+      <link>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/ctf/cyber-apocalypse-2021/web/cyber-apocalypse-2021-web-starfleet-writeup/</guid>
+      <description>1. Đề bài Bài này cho một web như vầy.
+Cho luôn source code như vầy Vậy bài này lại là một bài review source code.
+2. Giải quyết Các bạn để ý thì ảnh trên, bài thi cho địa chỉ web, khi truy cập vào thì có chức năng enroll với input cần điền vào là một email. Đọc vào source code thì có luôn chức năng send mail.</description>
+    </item>
+    
+    <item>
+      <title>[I passed OSWE] Nguồn gốc và sức mạnh | Tự tin và sự cố gắng</title>
+      <link>https://manhnv.com/post/oswe/i-passed-oswe-nguon-goc-va-suc-manh-tu-tin-va-su-co-gang/</link>
+      <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/oswe/i-passed-oswe-nguon-goc-va-suc-manh-tu-tin-va-su-co-gang/</guid>
+      <description>1. Giới thiệu Xin chào, lại là Tôi - một thằng hay viết các bài blog xàm xàm. Như đã hứa với các bạn đọc ở bài viết Chỉ một buổi chiều, Tôi đã chiếm quyền điều khiển server của 8 website như thế nào? (Một bài viết cũng có thể hay, các bạn đọc thử nhá), Tôi đã hứa là sẽ quay trở lại viết bài với series OSWE, nhưng thôi Tôi quyết định đặt nó thành series I passed OSWE và bài hôm nay sẽ là phần 1 - Nguồn gốc và sức mạnh | Tự tin và sự cố gắng.</description>
+    </item>
+    
+    <item>
+      <title>Chỉ một buổi chiều, Tôi đã chiếm quyền điều khiển server của 8 website như thế nào?</title>
+      <link>https://manhnv.com/post/hacking/chi-mot-buoi-chieu-toi-da-chiem-quyen-dieu-khien-server-cua-8-website-nhu-the-nao/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/hacking/chi-mot-buoi-chieu-toi-da-chiem-quyen-dieu-khien-server-cua-8-website-nhu-the-nao/</guid>
+      <description>Xin chào, xin chào các bạn. Lâu lâu lâu lắm rồi mình mới có thời gian để viết bài, vì bận quá (thực ra là vì lười quá).
+Chuyện là gần đây mình có hay lượn lờ đọc mấy bài về lập trình web (lại là câu chuyện về web đấy các bạn). Thì mình cũng chiếm được cái server nho nhỏ của 1 website (Tại sao tiêu đề là 8 mà đây mình lại ghi là 1, thì xem hồi sau sẽ rõ).</description>
+    </item>
+    
+    <item>
+      <title>Có PDB, debug python không còn khó khăn.</title>
+      <link>https://manhnv.com/post/python/co-pdb-debug-python-khong-con-kho-khan/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/python/co-pdb-debug-python-khong-con-kho-khan/</guid>
+      <description>PDB là viết tắt của &amp;quot;Python Debugger&amp;quot;, nó là trình gỡ lỗi (debug) source code tích hợp nhiều tính năng như: tạm dừng chương trình, xem các biến trong môi trường hợp cụ thể, thay đổi các giá trị của biến đó, ...
+Giới thiệu Gỡ lỗi (Debugging) là một trong những điều kinh khủng, khó ưa nhất trong phát triển phần mềm, nhưng điều ngang trái thay nó lại là một trong những thứ quan trọng bậc nhất trong vòng đời phát triển phần mềm.</description>
+    </item>
+    
+    <item>
+      <title>Thực hiện trinh sát - thăm dò email với công cụ buster. Hướng dẫn thăm dò crush, người yêu thời đại 4.0.</title>
+      <link>https://manhnv.com/post/hacking/thuc-hien-trinh-sat-tham-do-email-voi-cong-cu-buster-huong-dan-tham-do-crush-nguoi-yeu-thoi-dai-4.0/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/hacking/thuc-hien-trinh-sat-tham-do-email-voi-cong-cu-buster-huong-dan-tham-do-crush-nguoi-yeu-thoi-dai-4.0/</guid>
+      <description>Trinh sát - thăm dò, là một bước quan trọng cần thiết trong hacking, mục đích là biết mọi thứ (càng nhiều càng tốt) về mục tiêu đang muốn khai thác.
+Tiếp nối sau thành công cũng khá là vang dội của bài viết Săn tìm tài khoản mạng xã hội bằng công cụ sherlock, bài viết mà đã bị trang t.o.p.d.e.v lấy về đổi tên thành Hướng dẫn stalk facebook của crush thời đại 4.</description>
+    </item>
+    
+    <item>
+      <title>Săn tìm tài khoản mạng xã hội bằng công cụ sherlock</title>
+      <link>https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/</link>
+      <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/hacking/san-tim-tai-khoan-mang-xa-hoi-bang-sherlock-tool/</guid>
+      <description>Các phương tiện truyền thông - Mạng xã hội là nơi mà những tin tặc lợi dụng để tìm hiểu thông tin về bất kỳ người hoặc mục tiêu cụ thể nào.
+Hôm nay - cũng như mọi ngày, tôi ngủ dậy, đánh răng rửa mặt, ăn sáng rồi đi làm. Và lúc đi làm thì mình có tìm hiểu khá nhiều thứ hay ho, sau đó lại chia sẻ cho các bạn cùng đọc để hiểu thêm.</description>
+    </item>
+    
+    <item>
+      <title>Những ví dụ thực tế tốt nhất mà mọi lập trình viên php nên biết</title>
+      <link>https://manhnv.com/post/php/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/</link>
+      <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/php/nhung-vi-du-thuc-te-tot-nhat-ma-moi-lap-trinh-vien-php-nen-biet/</guid>
+      <description>PHP là ngôn ngữ được sử dụng rất nhiều trong lập trình web. Dưới đây là những ví dụ thực tế tốt nhất mà mọi lập trình viên đều nên biết và làm theo.
+Từng là một lập trình viên PHP, cũng làm những dự án lớn nhỏ của cá nhân, của công ty các thứ. Thì sau một thời gian dựa vào kinh nghiệm bản thân cũng như tìm hiểu qua bác google, mình cũng đúc rút ra được một số thứ hay ho muốn chia sẻ cho mọi người cùng đọc.</description>
+    </item>
+    
+    <item>
+      <title>CVE-2019-7164: Lỗ hổng trong SQLALchemy (version 1.2.17 và 1.3.x đến 1.3.0b2) cho phép SQL injection thông qua tham số order_by.</title>
+      <link>https://manhnv.com/post/cve-2019-7164-sqlalchemy-dinh-loi-sqlinjection-thong-qua-tham-so-cua-orderby/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/cve-2019-7164-sqlalchemy-dinh-loi-sqlinjection-thong-qua-tham-so-cua-orderby/</guid>
+      <description>CVE-2019-7164: Lỗ hổng trong SQLALchemy (version 1.2.17 và 1.3.x đến 1.3.0b2) cho phép SQL injection thông qua tham số order_by.
+Lời mở đầu Câu chuyện nó không có gì thú vị lắm nếu như tối không ngồi rảnh tay bấm vào xem source code của từng project cũ tôi từng viết trên github.
+Một ngày trời mưa ( theo tôi thì Hà Nội nắng nóng lâu rồi nên hôm nào mưa chính là ngày đẹp trời ), tôi vào xem lại từng project đã từng viết trong github của mình và nhận được một alert từ github: We found potential security vulnerabilities in your dependencies.</description>
+    </item>
+    
+    <item>
+      <title>Lỗ hổng Heartbleed là gì? Heartbleed hoạt động như thế nào?</title>
+      <link>https://manhnv.com/post/lo-hong-heartbleed-la-gi-heartbleed-hoat-dong-nhu-the-nao/</link>
+      <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/lo-hong-heartbleed-la-gi-heartbleed-hoat-dong-nhu-the-nao/</guid>
+      <description>&amp;quot;Heartbleed - Trái tim rỉ máu&amp;quot; là một lỗ hổng bảo mật rất nghiêm trọng, có mức độ ảnh hưởng đến 2/3 thiết bị internet trên toàn cầu. Vậy thì &#39;Heartbleed&#39; là gì? cũng như cách hoạt động của nó như thế nào? Các bạn hãy đọc tiếp bài viết này của mình để biết chi tiết hơn.
+Lỗ hổng Heartbleed là gì? Heartbleed là một lỗ hổng được tìm phát hiện vào tháng 4 năm 2014.</description>
+    </item>
+    
+    <item>
+      <title>CSRF (cross site request forgery) là gì? Làm thế nào để ngăn chặn tấn công CSRF?</title>
+      <link>https://manhnv.com/post/csrf-cross-site-request-forgery-la-gi-lam-the-nao-de-ngan-chan-tan-cong-csrf/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/csrf-cross-site-request-forgery-la-gi-lam-the-nao-de-ngan-chan-tan-cong-csrf/</guid>
+      <description>Cross Site Request Forgery viết tắt là CSRF.
+CSRF là một trong những hình thức tấn công phổ biến nhất của những kẻ gửi thư rác và những kẻ lừa đảo trực tuyến. Cách khai thác tấn công CSRF khá là phức tạp nhưng nó lại rất phổ biến.
+Nhưng các cuộc tấn công CSRF có thể rất dễ dự đoán và vì vậy mức ảnh hưởng của nó ở mức vừa phải.</description>
+    </item>
+    
+    <item>
+      <title>Webshell là gì? Làm thể nào để upload/sử dụng một webshell?</title>
+      <link>https://manhnv.com/post/webshell-la-gi-lam-the-nao-de-upload-su-dung-mot-webshell/</link>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/webshell-la-gi-lam-the-nao-de-upload-su-dung-mot-webshell/</guid>
+      <description>WebShell là 1 dạng mã độc, cửa hậu có nhiều chức năng để hỗ trợ các hacker chiếm quyền quản lý các hệ thống website.WebShell thường được viết bằng nhiều loại ngôn ngữ và thường thì chính là ngôn ngữ mà website đó đang sử dụng. Chức năng cơ bản là tải tệp tin lên máy chủ, kết nối đến cơ sở dữ liệu, vượt qua các cơ chế bảo mật, cấu hình, tấn công bruteforce, Get Root, Local Attack… chỉ cần hacker có thể tải được các tệp tin webshell này lên hệ thống của website thì xem như hacker đã có toàn quyền kiểm soát website đó, cho dù không biết tài khoản và mật khẩu của máy chủ này là gì.</description>
+    </item>
+    
+    <item>
+      <title>Tôi đã chiếm quyền admin của một trang web như thế nào? Lời cảnh báo cho những trang web đang để api mở!</title>
+      <link>https://manhnv.com/post/toi-da-chiem-quyen-admin-cua-mot-trang-web-nhu-the-nao-loi-canh-bao-cho-nhung-trang-web-dang-de-api-mo/</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/toi-da-chiem-quyen-admin-cua-mot-trang-web-nhu-the-nao-loi-canh-bao-cho-nhung-trang-web-dang-de-api-mo/</guid>
+      <description>Lời giới thiệu đầy ngọt ngào Một ngày đẹp trời, team của chúng tôi (Sun*$hell) được thách thức pentest cho một trang web chuẩn bị release, chính xác là còn 2 tiếng đồng hồ nữa là release. Chúng tôi đã không ngần ngại nhận lời thách thức này :D
+Sau một thời gian cật lực tìm kiếm lỗ hổng nào là XSS, Sql injection,&amp;hellip; (một danh sách lỗi hay gặp ở trên web) thì cũng thấy đội devs kiểm tra khá là tốt giá trị từ người dùng, và hầu như không gặp một lỗi cơ bản nào.</description>
+    </item>
+    
+    <item>
+      <title>Thực thi mã từ xa - Remote code execution</title>
+      <link>https://manhnv.com/post/thuc-thi-ma-tu-xa-remote-code-execution/</link>
+      <pubDate>Tue, 04 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/thuc-thi-ma-tu-xa-remote-code-execution/</guid>
+      <description>Mô tả Thực thi mã từ xa - Remote Code Execution tên viết tắt là RCE.
+Có thể hiểu là bạn sử dụng một số kỹ thuật nào đó để có thể chiếm được quyền điều khiển trên máy nạn nhân, thông qua đó có thể thực thi những câu lệnh shell, bash &amp;hellip;, hoặc thực thi code của những ngôn ngữ kịch bản (script) như python, perl, php, javascript, &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Blind SQL injection là gì? Blind injection khác với các loại SQL injection khác như thế nào?</title>
+      <link>https://manhnv.com/post/blind-sql-injection-la-gi-blind-injection-khac-voi-cac-loai-sql-injection-khac-nhu-the-nao/</link>
+      <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/blind-sql-injection-la-gi-blind-injection-khac-voi-cac-loai-sql-injection-khac-nhu-the-nao/</guid>
+      <description>Lỗ hổng SQL Injection (SQLI) là một trong những vấn đề bảo mật web lâu đời và phổ biến nhất. Mình đã có một bài viết Mô tả SQL Injection là gì và cách kiểm tra, các bạn có thể đọc kỹ hơn để biết.
+Trong bài viết này mình sẽ nói đến một trong các loại SQL injection đó là Blind SQL injection.
+Blind SQL injection là gì? Blind SQL injection là một kiểu tấn công SQL injection truy vấn cơ sở dữ liệu sử dụng các mệnh đề để đoán biết.</description>
+    </item>
+    
+    <item>
+      <title>Mô tả SQL Injection là gì và cách kiểm tra</title>
+      <link>https://manhnv.com/post/mo-ta-sql-injection-la-gi-va-cach-kiem-tra/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/mo-ta-sql-injection-la-gi-va-cach-kiem-tra/</guid>
+      <description>Bài viết mô tả về sql injection và cách để kiểm tra ứng dụng web có bị lỗi sql injection hay không.
+SQL injection được coi là một trong những cách tấn công phổ biến nhất vì nó có thể mang lại hậu quả nghiêm trọng và có hại cho hệ hệ thống và dữ liệu nhạy cảm của bạn
+SQL Injection là gì? SQL injection là một kỹ thuật tấn công vào hệ thống cơ sở dữ liệu của ứng dụng (web, mobile hoặc desktop &amp;hellip;) thông qua việc kẻ tấn công lợi dụng lỗ hổng kiểm tra dữ liệu đầu vào và thi hành các câu lệnh SQL bất hợp pháp.</description>
+    </item>
+    
+    <item>
+      <title>SỬ DỤNG ACUNETIX WEB VULNERABILITY SCANNER ĐỂ ĐÁNH GIÁ, PHÁT HIỆN ĐIỂM YẾU CỦA ỨNG DỤNG WEB</title>
+      <link>https://manhnv.com/post/su-dung-acunetix-web-vulnerability-scanner-de-danh-gia-phat-hien-diem-yeu-cua-ung-web/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/su-dung-acunetix-web-vulnerability-scanner-de-danh-gia-phat-hien-diem-yeu-cua-ung-web/</guid>
+      <description>Yêu cầu   Yêu cầu phần cứng:
+ 01 máy tính với cấu hình tối thiểu: CPU 3.0 GHz, RAM 4GB, HDD 50GB    Yêu cầu phần mềm trên máy:
+ Hệ điều hành Windows XP/7/8 VMware Worstation 11.0 trở lên    Công cụ thực hành:
+ Máy ảo Vmware Windows 7. Bộ cài đặt Acunetix Web Vulnerability Scanner 9.5    Yêu cầu kết nối mạng LAN: có</description>
+    </item>
+    
+    <item>
+      <title>Hướng dẫn xóa database khách hàng đúng cách! và cú lừa thời đại 4.0</title>
+      <link>https://manhnv.com/post/huong-dan-xoa-database-khach-hang-dung-cach-va-cu-lua-thoi-dai-4.0/</link>
+      <pubDate>Fri, 29 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/huong-dan-xoa-database-khach-hang-dung-cach-va-cu-lua-thoi-dai-4.0/</guid>
+      <description>Hướng dẫn xóa database khách hàng đúng cách! Xin chào! Lại là mình đây, và mình là một thằng đi code thuê thôi :D Hôm nay mình sẽ viết về một chủ đề khá là hay, khá là kiểu giật tít như tiêu đề đấy. Không phải các bạn đọc nhầm đâu nhé.
+Nào bắt đầu thôi.
+Giới thiệu Bạn là lập trình viên? hoặc có thể là ai đó khác nhưng có động tới database, thì điều đầu tiên sợ nhất là một ngày nọ bạn nghịch ngu và xóa luôn database.</description>
+    </item>
+    
+    <item>
+      <title>Khi lập trình viên chơi facebook - Biến Facebook messenger thành bot tra cứu tử vi </title>
+      <link>https://manhnv.com/post/khi-lap-trinh-vien-choi-facebook-bien-facebook-messenger-thanh-bot-tra-cuu-tu-vi/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/khi-lap-trinh-vien-choi-facebook-bien-facebook-messenger-thanh-bot-tra-cuu-tu-vi/</guid>
+      <description>Khi lập trình viên chơi facebook - Biến Facebook messager thành bot tra cứu tử vi Giới thiệu Ở trong cái xã hội mà nhà nhà, người người, từ trẻ nhỏ tới người già, từ nông thông tới thành thị đều dùng mạng xã hội có vẻ lặp từ xã hội - nhưng kệ đi =)). Đặc biệt thứ mà nhiều người đa số đều dùng đó chính là facebook. Nên là facebook là gì hay là làm thế nào chơi facebook thì mình sẽ không đề cập ở trong bài viết này, thế nhá!</description>
+    </item>
+    
+    <item>
+      <title>Tùy biến messages khi bạn mở terminal trên ubuntu sao cho đẹp và độc</title>
+      <link>https://manhnv.com/post/tuy-bien-messages-khi-mo-terminal-ubuntu-sao-cho-dep-va-doc/</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/post/tuy-bien-messages-khi-mo-terminal-ubuntu-sao-cho-dep-va-doc/</guid>
+      <description>Như các bạn đã biết ( nếu chưa biết thì mình nói cho mà biết ) đối với những ai sử dụng các hệ điều hành linux thì không thể thiếu “chương trình giao diện cửa sổ dòng lệnh” (command line interface), trong ubuntu thì có một chương trình có tên là “terminal”.
+ Việc tại sao, vì sao hay why sử dụng “chương trình giao diện cửa sổ dòng lệnh” là điều không thể thiếu đối với hệ điều hành linux, thì mình xin được nhường lại cho các bạn tự tìm hiểu nhé.</description>
+    </item>
+    
+  </channel>
+</rss>
