@@ -6,7 +6,17 @@
     <description>Recent content in ctf on Chia sẻ là niềm vui</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi</language>
-    <lastBuildDate>Sat, 26 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://manhnv.com/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://manhnv.com/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hack một ứng dụng web thông qua lỗi Improper Error Handling như thế nào?</title>
+      <link>https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/</link>
+      <pubDate>Thu, 19 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/</guid>
+      <description>Đợt vừa rồi, mình có tham gia thi Cyber Apocalypse CTF 2022 , năm ngoái mình cũng tham gia giải Cyber Apocalypse CTF 2021 có viết writeup xịn xò Cyber Apocalypse 202 1 Writeup, chủ yếu mình tham gia giải mấy bài web là chính.
+Năm nay tham gia thì cũng mục đích vào xem đề web hay có hay không, chứ không có ý định đi sâu, thì đâu đó ngồi hơn một buổi sáng thì clear được mấy bài như hình dưới:</description>
+    </item>
+    
     <item>
       <title>Write up - THỬ THÁCH NGÀY 1: PHP TYPE JUGGLING “_SMARTCALC.EXE_”</title>
       <link>https://manhnv.com/2022/03/writeup-thu-thach-ngay-1-php-type-juggling-smartcalc.exe/</link>

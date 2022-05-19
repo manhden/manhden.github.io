@@ -3,22 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://manhnv.com/categories/</loc>
-    <lastmod>2022-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://manhnv.com/</loc>
-    <lastmod>2022-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://manhnv.com/tags/ctf/</loc>
-    <lastmod>2022-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://manhnv.com/categories/ctf/</loc>
-    <lastmod>2022-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://manhnv.com/tags/ctf-web-writeup/</loc>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://manhnv.com/tags/cyber-apocalypse-2022/</loc>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/</loc>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://manhnv.com/post/</loc>
-    <lastmod>2022-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://manhnv.com/tags/</loc>
-    <lastmod>2022-03-26T00:00:00+00:00</lastmod>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://manhnv.com/tags/writeup/</loc>
+    <lastmod>2022-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://manhnv.com/2022/03/writeup-thu-thach-ngay-1-php-type-juggling-smartcalc.exe/</loc>
     <lastmod>2022-03-26T00:00:00+00:00</lastmod>
@@ -50,13 +62,7 @@
     <loc>https://manhnv.com/2021/05/cyber-apocalypse-2021-web-bug-report-writeup/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://manhnv.com/tags/ctf-web-writeup/</loc>
-    <lastmod>2021-05-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://manhnv.com/tags/cyber-apocalypse-2021/</loc>
-    <lastmod>2021-05-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://manhnv.com/tags/writeup/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://manhnv.com/2021/05/cyber-apocalypse-2021-web-alien-complaint-form-writeup/</loc>

